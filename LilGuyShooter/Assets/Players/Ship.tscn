@@ -23,6 +23,7 @@ size = Vector2(32, 32)
 
 [node name="Ship" type="CharacterBody2D"]
 scale = Vector2(1.20229, 0.484255)
+collision_mask = 2
 script = ExtResource("1_bnhe5")
 
 [node name="AnimatedShip" type="AnimatedSprite2D" parent="."]
