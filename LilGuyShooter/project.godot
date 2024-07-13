@@ -11,17 +11,17 @@ config_version=5
 [application]
 
 config/name="LilGuyShooter"
-run/main_scene="res://Assets/MainGame.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
-[dotnet]
-
-project/assembly_name="LilGuyShooter"
 [display]
 
 window/size/viewport_width=960
 window/size/viewport_height=480
+
+[dotnet]
+
+project/assembly_name="LilGuyShooter"
 
 [input]
 

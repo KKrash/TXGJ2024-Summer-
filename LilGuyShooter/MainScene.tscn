@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bs1fng0p30m0c"]
+
+[ext_resource type="Script" path="res://Scripts/Ship.gd" id="1_ce1s1"]
+[ext_resource type="Script" path="res://Scripts/LilGuy.gd" id="2_i83ip"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Ship" type="CharacterBody2D" parent="."]
+script = ExtResource("1_ce1s1")
+
+[node name="Lil Man" type="CharacterBody2D" parent="."]
+script = ExtResource("2_i83ip")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lil Man"]
