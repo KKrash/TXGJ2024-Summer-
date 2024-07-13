@@ -1,0 +1,56 @@
+extends RigidBody2D
+
+@onready var jumpTimer = $Timer
+@onready var shootTimer = $Timer
+
+const SPEED = 100.0
+const JUMP_VELOCITY = -50.0
+
+# Get the gravity from the project settings to be synced with RigidBody nodes.
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+var time=0;
+var on_ground = 0
+
+var rng = RandomNumberGenerator.new()
+func _on_Area2D_body_entered(body: Node) -> void:
+	on_ground += 1
+
+func _on_Area2D_body_exited(body: Node) -> void:
+	on_ground -= 1
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	jumpTimer.timeout.connect(_jump)
+	jumpTimer.wait_time = 2.5
+	#shootTimer.timeout.connect(_shoot)
+	shootTimer.wait_time = 2.5
+	shootTimer.start()
+	jumpTimer.start()
+
+#func _ready():
+#	var mob_types = $AnimatedSprite2D.sprite_frames.get_animation_names()
+#	$AnimatedSprite2D.play(mob_types[randi() % mob_types.size()])
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+		
+		
+func _jump():
+	jumpTimer.stop()
+	var direction = rng.randi_range(1, 3)
+	#if on_ground>0:
+	if direction>1:
+		apply_central_impulse(Vector2(-150, -150))
+		#print("left gaming")
+	else:
+		apply_central_impulse(Vector2(150, -150))
+		#print("right gaming")
+	var waitTime = rng.randf_range(3, 6)
+	jumpTimer.wait_time =waitTime
+	jumpTimer.start()
+
+
+
