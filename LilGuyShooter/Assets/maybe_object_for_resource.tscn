@@ -1,19 +1,62 @@
-[gd_scene load_steps=3 format=3 uid="uid://ctcxt07vxfwq1"]
+[gd_scene load_steps=8 format=3 uid="uid://ctcxt07vxfwq1"]
 
-[ext_resource type="Script" path="res://Scripts/maybe_object_for_resource.gd" id="1_qu2qp"]
+[ext_resource type="Texture2D" uid="uid://c734gvu3p50il" path="res://Sprites/placeholder_for_resource.png" id="1_kgatr"]
+[ext_resource type="Script" path="res://Scripts/resource thing.gd" id="2_trw5h"]
+[ext_resource type="Script" path="res://Scripts/LilGuyRESOURCETESTVERSION.gd" id="2_ywwq5"]
+[ext_resource type="Texture2D" uid="uid://cymic3r32lbu2" path="res://Sprites/PlayerBox.png" id="3_6444x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fns3s"]
-size = Vector2(3.73333, 3.79531)
+size = Vector2(5.02857, 5.07463)
 
-[node name="ResourceObject" type="Area2D"]
-position = Vector2(553, 320)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iamn3"]
+size = Vector2(1.04762, 3.73134)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5juai"]
+size = Vector2(31.9184, 31.773)
+
+[node name="ResourceObject" type="Node2D"]
+position = Vector2(417, 243)
 scale = Vector2(26.25, 23.45)
-script = ExtResource("1_qu2qp")
+
+[node name="resource thing" type="Sprite2D" parent="."]
+position = Vector2(-1.44762, 2.47335)
+scale = Vector2(0.210476, 0.320895)
+texture = ExtResource("1_kgatr")
+script = ExtResource("2_trw5h")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2.09524, -6.5032)
+[node name="Area2D" type="Area2D" parent="resource thing"]
+position = Vector2(-0.0761905, -0.0426439)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="resource thing/Area2D"]
+position = Vector2(0.0380955, 0.0213213)
 shape = SubResource("RectangleShape2D_fns3s")
 debug_color = Color(0.491896, 0.462666, 0.921023, 0.42)
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="The Player (Quote unquote)" type="CharacterBody2D" parent="."]
+visible = false
+position = Vector2(-3.61905, 6.65245)
+script = ExtResource("2_ywwq5")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="The Player (Quote unquote)"]
+visible = false
+position = Vector2(-0.104762, 0.0415764)
+shape = SubResource("RectangleShape2D_iamn3")
+
+[node name="Sprite2D" type="Sprite2D" parent="The Player (Quote unquote)"]
+visible = false
+position = Vector2(-0.0761909, 0.00959492)
+scale = Vector2(0.142857, 0.471482)
+texture = ExtResource("3_6444x")
+
+[node name="Sprite2D" type="StaticBody2D" parent="."]
+position = Vector2(2.81905, 9.29638)
+scale = Vector2(1.16726, 0.03758)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D"]
+position = Vector2(-1.90735e-06, 6.10352e-05)
+shape = SubResource("RectangleShape2D_5juai")
+
+[connection signal="body_entered" from="resource thing/Area2D" to="resource thing" method="_on_area_2d_body_entered"]

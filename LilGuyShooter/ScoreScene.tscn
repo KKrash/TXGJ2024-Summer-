@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://mffw60spxjh1"]
+
+[ext_resource type="Script" path="res://Scripts/HUD.gd" id="1_fsalt"]
+[ext_resource type="Script" path="res://Scripts/MainGame.gd" id="1_wd5cy"]
+
+[node name="TempManScene" type="Node2D"]
+script = ExtResource("1_wd5cy")
+
+[node name="ScoreTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("1_fsalt")
+
+[node name="ScoreLabel" type="Label" parent="HUD"]
+offset_right = 162.0
+offset_bottom = 48.0
+text = "0000000"
+
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
+[connection signal="start_game" from="HUD" to="." method="new_game"]

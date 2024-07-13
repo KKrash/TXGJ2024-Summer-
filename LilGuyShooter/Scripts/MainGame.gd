@@ -10,16 +10,18 @@ func _ready():
 #func _process(delta):
 	#pass
 
+func _on_score_timer_timeout():
+	incrementScore(1)
+	$HUD.update_score(score)
+
 func new_game():
 	score = 0
-	var Score_timer = get_node("Score Timer")
-	Score_timer.timeout.connect(_on_score_timer_timeout())
-	$Score_Timer.start()
 	$HUD.update_score(score)
 	
 func game_over():
 	$Score_Timer.stop()
 	
-func _on_score_timer_timeout():
-	score += 1
-	$HUD.update_score(score)
+func incrementScore(num):
+	score+=num
+
+	
