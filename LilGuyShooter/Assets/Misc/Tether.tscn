@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dexvc8sgpb0gv"]
+
+[ext_resource type="Script" path="res://Scripts/Tether.gd" id="1_ride0"]
+[ext_resource type="Texture2D" uid="uid://cq63i8c054hqw" path="res://icon.svg" id="2_pmk7j"]
+
+[node name="Tether" type="Node2D"]
+script = ExtResource("1_ride0")
+
+[node name="Line2D" type="Line2D" parent="."]
+texture = ExtResource("2_pmk7j")
+texture_mode = 1
