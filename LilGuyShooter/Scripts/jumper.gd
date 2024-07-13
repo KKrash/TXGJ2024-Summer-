@@ -19,7 +19,7 @@ func _on_Area2D_body_exited(body: Node) -> void:
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	my_timer.timeout.connect(_on_timer_timeout)
-	my_timer.wait_time = 3.0
+	my_timer.wait_time = 2.5
 	my_timer.start()
 
 #func _ready():
@@ -39,13 +39,13 @@ func _jump(rng):
 	#if on_ground>0:
 	if direction>1:
 		apply_central_impulse(Vector2(-300, -300))
-		print("left gaming")
+		#print("left gaming")
 	else:
 		apply_central_impulse(Vector2(300, -300))
-		print("right gaming")
+		#print("right gaming")
 
 func _on_timer_timeout():
-	print("Timer has timed out!")
+	#print("Timer has timed out!")
 	my_timer.stop()
 	var rng = RandomNumberGenerator.new()
 	_jump(rng)
