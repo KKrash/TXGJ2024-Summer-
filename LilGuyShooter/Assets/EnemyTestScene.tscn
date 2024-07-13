@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://vclnmq5abuq5"]
+[gd_scene load_steps=9 format=3 uid="uid://vclnmq5abuq5"]
 
 [ext_resource type="Script" path="res://Scripts/jumper.gd" id="1_40vhp"]
 [ext_resource type="Texture2D" uid="uid://cq63i8c054hqw" path="res://icon.svg" id="2_k2tfs"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p34vx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nsqgu"]
 atlas = ExtResource("2_k2tfs")
@@ -23,12 +25,16 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lu4yl"]
 size = Vector2(20, 8)
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dw4vj"]
+distance = -384.0
+
 [node name="EnemyTestScene" type="Node2D"]
 
 [node name="jumper" type="RigidBody2D" parent="."]
-position = Vector2(1, 0)
-collision_layer = 2
-collision_mask = 3
+position = Vector2(404, 111)
+collision_layer = 6
+collision_mask = 5
+physics_material_override = SubResource("PhysicsMaterial_p34vx")
 script = ExtResource("1_40vhp")
 metadata/_edit_group_ = true
 
@@ -42,9 +48,18 @@ shape = SubResource("RectangleShape2D_gmeiv")
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="jumper"]
 
 [node name="Area2D" type="Area2D" parent="jumper"]
-collision_layer = 2
-collision_mask = 4
+collision_layer = 4
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="jumper/Area2D"]
 position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_lu4yl")
+
+[node name="Timer" type="Timer" parent="jumper"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_dw4vj")
