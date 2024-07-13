@@ -4,9 +4,9 @@ extends Node2D
 # Properties
 var pointA : CharacterBody2D
 var pointB : CharacterBody2D
-var ropeLength : float = 100.0
+var ropeLength : float = 50.0
 var slack : float = 15.0
-var segments : int = 10
+var segments : int = 20
 
 # Example: Set pointA and pointB references
 

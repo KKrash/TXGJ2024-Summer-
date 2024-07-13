@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://drxde67s6h5gg"]
+
+[ext_resource type="Script" path="res://Assets/Misc/Projectiles/LaserBlast.gd" id="1_dy72c"]
+[ext_resource type="Texture2D" uid="uid://cq63i8c054hqw" path="res://icon.svg" id="1_htmna"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bh355"]
+size = Vector2(36.51, 9)
+
+[node name="LaserBlast" type="RigidBody2D"]
+collision_layer = 6
+collision_mask = 6
+script = ExtResource("1_dy72c")
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(-0.0830604, 0.070354)
+texture = ExtResource("1_htmna")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.19209e-07, -5.96046e-08)
+rotation = -3.14159
+scale = Vector2(0.273898, -0.982515)
+shape = SubResource("RectangleShape2D_bh355")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

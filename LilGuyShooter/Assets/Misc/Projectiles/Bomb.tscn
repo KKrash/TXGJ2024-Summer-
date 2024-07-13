@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://8jycehhmewra"]
+
+[ext_resource type="Texture2D" uid="uid://ceh2d38cdexnw" path="res://Sprites/ShipBox.png" id="1_jvn2t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ceasa"]
+
+[node name="Bomb" type="Node2D"]
+
+[node name="ShipBox" type="Sprite2D" parent="."]
+scale = Vector2(0.449276, -0.435147)
+texture = ExtResource("1_jvn2t")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_ceasa")
