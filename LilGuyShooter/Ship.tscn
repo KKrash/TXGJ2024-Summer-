@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://c224sk0h68ltg"]
+
+[ext_resource type="Script" path="res://Scripts/Ship.gd" id="1_8ed2i"]
+[ext_resource type="Texture2D" uid="uid://ceh2d38cdexnw" path="res://Sprites/ShipBox.png" id="1_428r6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hx1ko"]
+atlas = ExtResource("1_428r6")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_etqy1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hx1ko")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4t05a"]
+size = Vector2(32, 32)
+
+[node name="ShipBody" type="CharacterBody2D"]
+script = ExtResource("1_8ed2i")
+
+[node name="AnimatedShipSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_etqy1")
+
+[node name="ShipCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4t05a")

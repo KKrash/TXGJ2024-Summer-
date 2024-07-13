@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://cn08nyghidn3u"]
+
+[ext_resource type="Texture2D" uid="uid://cymic3r32lbu2" path="res://Sprites/PlayerBox.png" id="1_o1k1d"]
+[ext_resource type="Script" path="res://Scripts/LilGuy.gd" id="1_ycywk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bq81t"]
+atlas = ExtResource("1_o1k1d")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sqeol"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bq81t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4t05a"]
+size = Vector2(8, 8)
+
+[node name="SpaceMan" type="CharacterBody2D"]
+script = ExtResource("1_ycywk")
+
+[node name="AnimatedSpaceMan" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_sqeol")
+
+[node name="SpaceManCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4t05a")

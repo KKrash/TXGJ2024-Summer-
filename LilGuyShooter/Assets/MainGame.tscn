@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8grqae4m3fqf"]
+
+[ext_resource type="PackedScene" uid="uid://cb4vpux52v3ib" path="res://Assets/Players/Ship.tscn" id="1_3dbry"]
+[ext_resource type="PackedScene" uid="uid://cn08nyghidn3u" path="res://Assets/Players/LilGuy.tscn" id="1_kn7o5"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_o6pjb"]
+
+[node name="MainGame" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="SpaceMan" parent="." instance=ExtResource("1_kn7o5")]
+position = Vector2(1, 2)
+
+[node name="Ship" parent="." instance=ExtResource("1_3dbry")]
+position = Vector2(-51, -35)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 37)
+shape = SubResource("WorldBoundaryShape2D_o6pjb")
