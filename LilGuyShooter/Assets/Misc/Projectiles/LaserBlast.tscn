@@ -54,7 +54,7 @@ script = ExtResource("1_wwkaj")
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_hjtdc")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Boom"]]
 position = Vector2(-3.18086e-08, 0.210658)
 rotation = -3.14159
 scale = Vector2(0.297, -0.263834)
