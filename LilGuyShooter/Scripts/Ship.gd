@@ -8,6 +8,7 @@ var can_attack = true
 var gravity : float = 500.0
 func _ready():
 	$AnimatedSprite2D.play("default")
+	$AudioStreamPlayer2D.play()
 func _physics_process(delta):
 	if last_attack_time == 0 and !can_attack:
 		can_attack = true
@@ -35,7 +36,9 @@ func _process(delta):
 	
 func shoot():
 	var targetPosition = position+Vector2(100,-10)
+	
 	if can_attack:
+		$AudioStreamPlayer2D2.play(0.35)
 		last_attack_time = 0.001
 		if projectileScene != null:
 			var projectileInstance: RigidBody2D = projectileScene.instantiate()
@@ -53,6 +56,7 @@ func shoot():
 		 # Connect collision signal
 		
 func shoot2():
+	$AudioStreamPlayer2D2.play(0.35)
 	var targetPosition = position+Vector2(0,30)
 	if can_attack:
 		last_attack_time = 0.001
@@ -70,3 +74,6 @@ func shoot2():
 				projectileInstance.linear_velocity = initialVelocity
 
 					
+func _damageFuel():
+	GlobalVars.fuelPercentage-=10
+	#print("ASTEROID HIT SHIP "+str(GlobalVars.fuelPercentage))

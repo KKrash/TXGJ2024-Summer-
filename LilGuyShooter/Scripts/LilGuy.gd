@@ -48,5 +48,11 @@ func _physics_process(delta):
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("Boom"):
+		
 		print("OW FUCK")
 	pass # Replace with function body.
+
+
+func _takeDamage():
+	GlobalVars.lives-=1
+	#print("BULLET HIT PLAYER "+str(GlobalVars.lives))
