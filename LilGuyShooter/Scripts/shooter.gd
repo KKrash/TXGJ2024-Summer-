@@ -80,3 +80,11 @@ func _shoot():
 func _on_area_2d_area_entered(area):
 	queue_free()
 	pass # Replace with function body.
+
+
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("player"):	
+		#print("SHOOTERHIT")
+		if body.has_method("_takeDamage"):
+			body._takeDamage()
+		queue_free()

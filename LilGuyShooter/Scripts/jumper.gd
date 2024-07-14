@@ -10,11 +10,11 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var time=0;
 var on_ground = 0
 
-func _on_Area2D_body_entered(body: Node) -> void:
-	on_ground += 1
-
-func _on_Area2D_body_exited(body: Node) -> void:
-	on_ground -= 1
+#func _on_Area2D_body_entered(body: Node) -> void:
+	#on_ground += 1
+#
+#func _on_Area2D_body_exited(body: Node) -> void:
+	#on_ground -= 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -59,3 +59,13 @@ func _on_timer_timeout():
 func _on_area_2d_area_entered(area):
 	queue_free()
 	pass # Replace with function body.
+
+
+
+
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("player"):	
+		#print("JUMPERHIT")
+		if body.has_method("_takeDamage"):
+			body._takeDamage()
+		queue_free()
