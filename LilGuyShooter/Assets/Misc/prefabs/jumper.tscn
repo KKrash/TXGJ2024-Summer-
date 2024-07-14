@@ -23,7 +23,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gmeiv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lu4yl"]
-size = Vector2(20, 8)
+size = Vector2(22, 22)
 
 [node name="jumper" type="RigidBody2D"]
 collision_layer = 6
@@ -46,7 +46,6 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_lu4yl")
 
 [node name="Timer" type="Timer" parent="."]
