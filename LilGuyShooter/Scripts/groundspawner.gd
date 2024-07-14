@@ -18,14 +18,14 @@ func _process(delta):
 func _newGround():
 	#var targetPosition = position-Vector2(25,0)
 	groundTimer.stop()
-	var groundInstance: RigidBody2D = groundPiece.instantiate()
+	var groundInstance: StaticBody2D = groundPiece.instantiate()
 	if groundInstance != null:
 		get_parent().add_child(groundInstance)
 		groundInstance.position = Vector2(997,400+(elevation*80))
 	var randomchangei=rng.randi_range(-1,1)
 	var randomchange:float=randomchangei/10.0
 	if elevation<2.5:
-		if elevation >-0.8:
+		if elevation >-0.2:
 			elevation+=randomchange
 		else:
 			elevation+=0.1
