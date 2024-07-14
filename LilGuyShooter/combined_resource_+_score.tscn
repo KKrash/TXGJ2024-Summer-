@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://b0yt02mf1cg77"]
+
+[ext_resource type="Script" path="res://Scripts/MainGame.gd" id="1_cldhk"]
+[ext_resource type="Script" path="res://Scripts/HUD.gd" id="2_rcscw"]
+[ext_resource type="PackedScene" uid="uid://creyl13tiwied" path="res://resourceScene.tscn" id="2_wnfwx"]
+[ext_resource type="Texture2D" uid="uid://cymic3r32lbu2" path="res://Sprites/PlayerBox.png" id="4_d8gd4"]
+[ext_resource type="Script" path="res://Scripts/LilGuyRESOURCETESTVERSION.gd" id="4_orumn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_72cfr"]
+size = Vector2(26, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1fhh6"]
+size = Vector2(962, 20)
+
+[node name="Combined Resource + Score" type="Node2D"]
+script = ExtResource("1_cldhk")
+
+[node name="Lil Man" type="CharacterBody2D" parent="."]
+script = ExtResource("4_orumn")
+
+[node name="Sprite2D" type="Sprite2D" parent="Lil Man"]
+position = Vector2(118, 440)
+scale = Vector2(3.3125, 3.8125)
+texture = ExtResource("4_d8gd4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lil Man"]
+position = Vector2(118, 439)
+shape = SubResource("RectangleShape2D_72cfr")
+debug_color = Color(0.97077, 0, 0.452488, 0.42)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(480, 467)
+shape = SubResource("RectangleShape2D_1fhh6")
+
+[node name="ScoreTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("2_rcscw")
+
+[node name="ScoreLabel" type="Label" parent="HUD"]
+offset_right = 162.0
+offset_bottom = 48.0
+text = "0000000"
+
+[node name="ResourceTimer" type="Timer" parent="."]
+
+[node name="resourceSource" parent="." instance=ExtResource("2_wnfwx")]
+
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
+[connection signal="timeout" from="ResourceTimer" to="." method="_on_resource_timer_timeout"]

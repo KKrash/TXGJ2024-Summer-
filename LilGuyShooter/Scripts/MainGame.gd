@@ -11,17 +11,16 @@ func _ready():
 	#pass
 
 func _on_score_timer_timeout():
-	incrementScore(1)
+	score+=1
 	$HUD.update_score(score)
 
 func new_game():
 	score = 0
+	$ResourceTimer.start()
 	$HUD.update_score(score)
 	
 func game_over():
 	$Score_Timer.stop()
-	
-func incrementScore(num):
-	score+=num
 
-	
+func _on_resource_thing_obtained_fuel():
+	score+=10

@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://mffw60spxjh1"]
+[gd_scene load_steps=3 format=3 uid="uid://fwx85lu0ew5b"]
 
 [ext_resource type="Script" path="res://Scripts/HUD.gd" id="1_fsalt"]
 [ext_resource type="Script" path="res://Scripts/MainGame.gd" id="1_wd5cy"]
