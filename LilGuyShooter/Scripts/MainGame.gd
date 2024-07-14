@@ -20,4 +20,5 @@ func new_game():
 	
 func game_over():
 	$Score_Timer.stop()
+	get_tree().change_scene_to_file("res://ending_scene.tscn")
 
