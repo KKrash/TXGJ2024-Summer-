@@ -1,12 +1,17 @@
-[gd_scene load_steps=10 format=3 uid="uid://b0yt02mf1cg77"]
+[gd_scene load_steps=15 format=3 uid="uid://b0yt02mf1cg77"]
 
 [ext_resource type="Script" path="res://Scripts/MainGame.gd" id="1_cldhk"]
+[ext_resource type="Texture2D" uid="uid://bdrxarsgbagin" path="res://Sprites/sky.png" id="2_12yup"]
 [ext_resource type="Script" path="res://Scripts/HUD.gd" id="2_rcscw"]
-[ext_resource type="PackedScene" uid="uid://creyl13tiwied" path="res://resourceScene.tscn" id="2_wnfwx"]
+[ext_resource type="PackedScene" uid="uid://creyl13tiwied" path="res://jerryCanResource.tscn" id="2_wnfwx"]
+[ext_resource type="Texture2D" uid="uid://dx5su5fbi5s87" path="res://Sprites/mountain-range.png" id="3_ngjjm"]
 [ext_resource type="Texture2D" uid="uid://cymic3r32lbu2" path="res://Sprites/PlayerBox.png" id="4_d8gd4"]
 [ext_resource type="Script" path="res://Scripts/LilGuyRESOURCETESTVERSION.gd" id="4_orumn"]
-[ext_resource type="Texture2D" uid="uid://c734gvu3p50il" path="res://Sprites/placeholder_for_resource.png" id="5_p5fv8"]
+[ext_resource type="Texture2D" uid="uid://camtkqjdxgn7l" path="res://Sprites/heart-ui.png" id="5_ccpcy"]
 [ext_resource type="Texture2D" uid="uid://d1q4l8w5kafln" path="res://Sprites/fuel bar.png" id="6_57otc"]
+[ext_resource type="Texture2D" uid="uid://njgtpnneyi8p" path="res://Sprites/fuel-bar-ui.png" id="7_w7253"]
+[ext_resource type="PackedScene" uid="uid://bf743ovm6elo8" path="res://crystal_1_resource.tscn" id="9_saarq"]
+[ext_resource type="PackedScene" uid="uid://63rwjhu66425" path="res://crystal_2_resource.tscn" id="10_frwhy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_72cfr"]
 size = Vector2(26, 29)
@@ -16,6 +21,16 @@ size = Vector2(962, 20)
 
 [node name="Combined Resource + Score" type="Node2D"]
 script = ExtResource("1_cldhk")
+
+[node name="background" type="TextureRect" parent="."]
+offset_right = 962.0
+offset_bottom = 478.0
+texture = ExtResource("2_12yup")
+
+[node name="mountain" type="TextureRect" parent="."]
+offset_right = 962.0
+offset_bottom = 478.0
+texture = ExtResource("3_ngjjm")
 
 [node name="Lil Man" type="CharacterBody2D" parent="."]
 script = ExtResource("4_orumn")
@@ -60,35 +75,43 @@ offset_bottom = 26.0
 text = "9999999"
 
 [node name="sprite for heart" type="TextureRect" parent="HUD"]
-offset_left = 6.0
-offset_top = 7.0
-offset_right = 11.0
-offset_bottom = 12.0
+offset_left = -11.0
+offset_top = 47.0
+offset_right = 21.0
+offset_bottom = 79.0
 scale = Vector2(3.8, 3.39)
-texture = ExtResource("5_p5fv8")
-
-[node name="Fuel" type="Label" parent="HUD"]
-visible = false
-offset_left = 5.0
-offset_top = 28.0
-offset_right = 98.0
-offset_bottom = 51.0
-text = "9999999999"
+texture = ExtResource("5_ccpcy")
+metadata/_edit_lock_ = true
 
 [node name="FuelBar" type="TextureRect" parent="HUD"]
-offset_left = 6.0
-offset_top = 29.0
-offset_right = 7.0
-offset_bottom = 34.0
+offset_left = 11.0
+offset_top = 41.0
+offset_right = 31.0
+offset_bottom = 46.0
 scale = Vector2(18, 3.704)
 texture = ExtResource("6_57otc")
 stretch_mode = 1
 
+[node name="FuelBarLabel" type="TextureRect" parent="HUD"]
+offset_left = 6.0
+offset_top = 3.0
+offset_right = 383.0
+offset_bottom = 66.0
+texture = ExtResource("7_w7253")
+metadata/_edit_lock_ = true
+
 [node name="ResourceTimer" type="Timer" parent="."]
 
-[node name="resourceSource" parent="." instance=ExtResource("2_wnfwx")]
+[node name="jerryCanResource" parent="." instance=ExtResource("2_wnfwx")]
+position = Vector2(23, 261)
 
 [node name="Fuel Decrease" type="Timer" parent="."]
+
+[node name="crystal1Resource" parent="." instance=ExtResource("9_saarq")]
+position = Vector2(186, -13)
+
+[node name="crystal2Resource" parent="." instance=ExtResource("10_frwhy")]
+position = Vector2(100, 86)
 
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
 [connection signal="timeout" from="ResourceTimer" to="." method="_on_resource_timer_timeout"]

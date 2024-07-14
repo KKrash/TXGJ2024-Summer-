@@ -1,25 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://creyl13tiwied"]
+[gd_scene load_steps=4 format=3 uid="uid://63rwjhu66425"]
 
-[ext_resource type="Texture2D" uid="uid://c734gvu3p50il" path="res://Sprites/placeholder_for_resource.png" id="1_invqb"]
-[ext_resource type="Script" path="res://Scripts/resourceFuel.gd" id="2_us2qo"]
+[ext_resource type="Texture2D" uid="uid://cf5fsinh7hnou" path="res://Sprites/crystal-2.png" id="1_xrhr1"]
+[ext_resource type="Script" path="res://crystal2Resource.gd" id="2_x86us"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_88kn4"]
-size = Vector2(5.02857, 5.07463)
+size = Vector2(22.2698, 20.4612)
 
-[node name="resourceSource" type="Node2D"]
+[node name="crystal2Resource" type="Node2D"]
 
 [node name="resourceThing" type="Sprite2D" parent="."]
-position = Vector2(149, 385)
-scale = Vector2(3.9, 3.9)
-texture = ExtResource("1_invqb")
-script = ExtResource("2_us2qo")
+position = Vector2(410, 286)
+scale = Vector2(2.91875, 2.98125)
+texture = ExtResource("1_xrhr1")
+script = ExtResource("2_x86us")
 metadata/_edit_group_ = true
 
 [node name="Area2D" type="Area2D" parent="resourceThing"]
 position = Vector2(-0.0407818, -0.0196079)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="resourceThing/Area2D"]
-position = Vector2(0.0407829, 0.0196152)
+position = Vector2(-0.215626, -0.108597)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_88kn4")
 debug_color = Color(0.491896, 0.462666, 0.921023, 0.42)
 

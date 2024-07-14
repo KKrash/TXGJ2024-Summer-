@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://creyl13tiwied"]
+
+[ext_resource type="Texture2D" uid="uid://c04cvisb4y2b7" path="res://Sprites/jerry-can.png" id="1_vfyix"]
+[ext_resource type="Script" path="res://Scripts/resourceFuel.gd" id="2_us2qo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_88kn4"]
+size = Vector2(22.2698, 20.4612)
+
+[node name="jerryCanResource" type="Node2D"]
+
+[node name="resourceThing" type="Sprite2D" parent="."]
+position = Vector2(169, 110)
+scale = Vector2(2.91875, 2.98125)
+texture = ExtResource("1_vfyix")
+script = ExtResource("2_us2qo")
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="resourceThing"]
+position = Vector2(-0.0407818, -0.0196079)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="resourceThing/Area2D"]
+position = Vector2(-0.215626, -0.108597)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_88kn4")
+debug_color = Color(0.491896, 0.462666, 0.921023, 0.42)
+
+[connection signal="body_entered" from="resourceThing/Area2D" to="resourceThing" method="_on_area_2d_body_entered"]

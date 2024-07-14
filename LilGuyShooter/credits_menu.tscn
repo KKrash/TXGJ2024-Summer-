@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://oistpj41jlo6"]
+[gd_scene load_steps=9 format=3 uid="uid://oistpj41jlo6"]
 
 [ext_resource type="Script" path="res://Scripts/credits_menu.gd" id="1_o65qp"]
+[ext_resource type="Texture2D" uid="uid://bdrxarsgbagin" path="res://Sprites/sky.png" id="2_m6obu"]
+[ext_resource type="Texture2D" uid="uid://dx5su5fbi5s87" path="res://Sprites/mountain-range.png" id="3_xnolw"]
+[ext_resource type="Texture2D" uid="uid://3kcl0ianx2js" path="res://Sprites/closet-signature.png" id="4_n25y0"]
+[ext_resource type="Texture2D" uid="uid://5qxrhk7vww4b" path="res://Sprites/doggo-signature.png" id="5_cqrqh"]
+[ext_resource type="Texture2D" uid="uid://u2wg7b5he242" path="res://Sprites/isa-signature.png" id="6_bu2eq"]
+[ext_resource type="Texture2D" uid="uid://dmrl7x7cqc1er" path="res://Sprites/sus-signature.png" id="7_yqmsh"]
+[ext_resource type="Texture2D" uid="uid://d28uk54yhdd11" path="res://Sprites/rayyy-signature.png" id="8_ck832"]
 
 [node name="Credits Menu" type="Control"]
 layout_mode = 3
@@ -10,38 +17,48 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_o65qp")
+metadata/_edit_lock_ = true
 
-[node name="Label" type="Label" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 960.0
-offset_bottom = 23.0
-text = "CREDITS"
-horizontal_alignment = 1
+offset_right = 961.0
+offset_bottom = 480.0
+texture = ExtResource("2_m6obu")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="mountains" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = 120.0
+offset_right = 961.0
+offset_bottom = 480.0
+texture = ExtResource("3_xnolw")
+metadata/_edit_group_ = true
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 347.0
-offset_top = 77.0
-offset_right = 628.0
-offset_bottom = 109.0
+offset_left = 342.0
+offset_top = 44.0
+offset_right = 623.0
+offset_bottom = 76.0
 text = "+Programmers+"
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="."]
 layout_mode = 0
 offset_left = 1.0
-offset_top = 78.0
+offset_top = 45.0
 offset_right = 249.0
-offset_bottom = 101.0
+offset_bottom = 68.0
 text = "+Artist+"
 horizontal_alignment = 1
 
 [node name="Label4" type="Label" parent="."]
 layout_mode = 0
-offset_left = 719.0
-offset_top = 75.0
-offset_right = 959.0
-offset_bottom = 98.0
+offset_left = 711.0
+offset_top = 44.0
+offset_right = 951.0
+offset_bottom = 67.0
 text = "+Music and Sound Effects+"
 
 [node name="TextureButton" type="TextureButton" parent="."]
@@ -60,5 +77,25 @@ offset_bottom = 43.0
 text = "BACK"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Closet-signature" type="Sprite2D" parent="."]
+position = Vector2(481, 266)
+texture = ExtResource("4_n25y0")
+
+[node name="Doggo-signature" type="Sprite2D" parent="."]
+position = Vector2(822, 92)
+texture = ExtResource("5_cqrqh")
+
+[node name="Isa-signature" type="Sprite2D" parent="."]
+position = Vector2(487, 101)
+texture = ExtResource("6_bu2eq")
+
+[node name="Sus-signature" type="Sprite2D" parent="."]
+position = Vector2(156, 86)
+texture = ExtResource("7_yqmsh")
+
+[node name="Rayyy-signature" type="Sprite2D" parent="."]
+position = Vector2(478, 169)
+texture = ExtResource("8_ck832")
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

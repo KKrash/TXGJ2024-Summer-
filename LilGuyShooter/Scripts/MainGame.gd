@@ -8,10 +8,9 @@ func _ready():
 func _process(_delta):
 	if GlobalVars.lives == 0:
 		game_over()
-	if GlobalVars.fuelPercentage <= 0:
+	if GlobalVars.currentFuel <= 0:
 		game_over()
 	
-
 func _on_score_timer_timeout():
 	GlobalVars.score+=1
 	$HUD.update_score(GlobalVars.score)
@@ -31,8 +30,7 @@ func game_over():
 	get_tree().change_scene_to_file("res://ending_scene.tscn")
 
 func _on_fuel_decrease_timeout():
-	GlobalVars.currentFuel-=.25
-	#GlobalVars.fuelPercentage -= 1
+	GlobalVars.currentFuel-=.20
 	var newSize = Vector2(GlobalVars.currentFuel, $HUD/FuelBar.get_size().y)
 	$HUD/FuelBar.set_size(newSize)
 	#print($HUD/FuelBar.get_size())
