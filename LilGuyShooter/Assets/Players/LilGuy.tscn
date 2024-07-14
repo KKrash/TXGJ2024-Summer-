@@ -71,7 +71,7 @@ height = 20.2648
 radius = 4.99175
 height = 24.0
 
-[node name="SpaceMan" type="CharacterBody2D" groups=["player"]]
+[node name="SpaceMan" type="CharacterBody2D"]
 script = ExtResource("1_ycywk")
 
 [node name="AnimatedSpaceMan" type="AnimatedSprite2D" parent="."]
