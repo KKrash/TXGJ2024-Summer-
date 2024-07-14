@@ -53,5 +53,9 @@ func _jump():
 	jumpTimer.start()
 
 func _shoot():
-	pass
+	shootTimer.stop()
+	#add_child(load("res://Assets/Misc/prefabs/bullet.tscn").instance())
+	var waitTime = rng.randf_range(3, 6)
+	shootTimer.wait_time =waitTime
+	shootTimer.start()
 

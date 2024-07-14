@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://djikr5p2elxey"]
+[gd_scene load_steps=6 format=3 uid="uid://djikr5p2elxey"]
 
+[ext_resource type="Script" path="res://Scripts/bulletScript.gd" id="1_2ct5s"]
 [ext_resource type="Texture2D" uid="uid://cblkkg8qkhajm" path="res://Assets/Misc/120px-Grenade_proj_red.png" id="1_ieftc"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cetkm"]
@@ -21,6 +22,7 @@ animations = [{
 collision_layer = 6
 collision_mask = 5
 physics_material_override = SubResource("PhysicsMaterial_cetkm")
+script = ExtResource("1_2ct5s")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -28,5 +30,7 @@ position = Vector2(0, 2.38419e-07)
 scale = Vector2(0.145833, 0.141509)
 sprite_frames = SubResource("SpriteFrames_jndva")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_jilg5")
