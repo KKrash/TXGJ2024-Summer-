@@ -1,5 +1,4 @@
 extends Node2D
-var score
 
 ## Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,16 +10,14 @@ func _ready():
 	#pass
 
 func _on_score_timer_timeout():
-	score+=1
-	$HUD.update_score(score)
+	GlobalVars.score+=1
+	$HUD.update_score(GlobalVars.score)
 
 func new_game():
-	score = 0
+	GlobalVars.score = 0
 	$ResourceTimer.start()
-	$HUD.update_score(score)
+	$HUD.update_score(GlobalVars.score)
 	
 func game_over():
 	$Score_Timer.stop()
 
-func _on_resource_thing_obtained_fuel():
-	score+=10
