@@ -13,4 +13,4 @@ position = Vector2(0, -14)
 position = Vector2(44, 6)
 
 [node name="Ship" parent="." instance=ExtResource("2_5sdqe")]
-position = Vector2(0, -34)
+position = Vector2(-7, -51)

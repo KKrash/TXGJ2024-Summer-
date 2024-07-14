@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://vclnmq5abuq5"]
 
-[ext_resource type="PackedScene" uid="uid://b3g6ak0kevywe" path="res://Assets/Misc/prefabs/enemydirector.tscn" id="4_kg0k8"]
-[ext_resource type="PackedScene" uid="uid://goacnvemnfee" path="res://Assets/Misc/prefabs/asteroiddirector.tscn" id="5_6bboq"]
+[ext_resource type="PackedScene" path="res://Assets/Misc/prefabs/enemydirector.tscn" id="4_kg0k8"]
+[ext_resource type="PackedScene" path="res://Assets/Misc/prefabs/asteroiddirector.tscn" id="5_6bboq"]
 [ext_resource type="PackedScene" uid="uid://djikr5p2elxey" path="res://Assets/Misc/prefabs/bullet.tscn" id="5_yvv03"]
-[ext_resource type="PackedScene" uid="uid://bx1xnk28drd8t" path="res://Assets/Misc/prefabs/groundpiece.tscn" id="7_knu7j"]
+[ext_resource type="PackedScene" path="res://Assets/Misc/prefabs/groundpiece.tscn" id="7_knu7j"]
 [ext_resource type="Script" path="res://Scripts/groundspawner.gd" id="8_lvthb"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dw4vj"]

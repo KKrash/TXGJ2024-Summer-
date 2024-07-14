@@ -1,7 +1,7 @@
 extends CharacterBody2D
 signal hit
 
-const SPEED = 50.0
+const SPEED = 150.0
 const JUMP_VELOCITY = -300.0
 @onready var AnimatedGuy = $AnimatedSpaceMan
 @onready var hitbox = $Area2D/CollisionShape2D

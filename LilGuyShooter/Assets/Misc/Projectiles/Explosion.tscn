@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bpu1wl86m75m0"]
 
 [ext_resource type="Script" path="res://Scripts/Explosion.gd" id="1_t8fpi"]
-[ext_resource type="Texture2D" path="res://Sprites/gamejam-art.png" id="2_cy6mh"]
+[ext_resource type="Texture2D" uid="uid://do7eaqa106tyo" path="res://Sprites/gamejam-art.png" id="2_cy6mh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a2x87"]
 radius = 23.0217
