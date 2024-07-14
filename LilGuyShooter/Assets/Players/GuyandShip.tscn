@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bngy5crnj0bf8"]
 
 [ext_resource type="PackedScene" uid="uid://cn08nyghidn3u" path="res://Assets/Players/LilGuy.tscn" id="1_4n1je"]
-[ext_resource type="PackedScene" uid="uid://cb4vpux52v3ib" path="res://Assets/Players/Ship.tscn" id="2_5sdqe"]
+[ext_resource type="PackedScene" uid="uid://cb4vpux52v3ib" path="res://Scripts/Ship.tscn" id="2_5sdqe"]
 [ext_resource type="PackedScene" uid="uid://dexvc8sgpb0gv" path="res://Assets/Misc/Tether.tscn" id="3_au54o"]
 
 [node name="GuyandShip" type="Node2D"]

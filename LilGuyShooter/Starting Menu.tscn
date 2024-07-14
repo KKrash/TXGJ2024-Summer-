@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cs858ilu7pxsb"]
 
-[ext_resource type="Script" path="res://TxtrButton.gd" id="1_635kg"]
-[ext_resource type="Script" path="res://Starting Menu.gd" id="1_eukgo"]
+[ext_resource type="Script" path="res://Scripts/TxtrButton.gd" id="1_635kg"]
+[ext_resource type="Script" path="res://Scripts/Starting Menu.gd" id="1_eukgo"]
 
 [node name="StartingMenu" type="Control"]
 layout_mode = 3
