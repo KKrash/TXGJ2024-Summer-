@@ -46,22 +46,22 @@ radius = 10.9717
 [sub_resource type="CircleShape2D" id="CircleShape2D_w1psf"]
 
 [node name="LaserBlast" type="RigidBody2D"]
-collision_layer = 6
-collision_mask = 6
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_wwkaj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_hjtdc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Boom"]]
 position = Vector2(-3.18086e-08, 0.210658)
 rotation = -3.14159
-scale = Vector2(0.297, -0.263834)
+scale = Vector2(0.55, 0.55)
 shape = SubResource("CircleShape2D_2bftf")
 
 [node name="Area2D" type="Area2D" parent="."]
-scale = Vector2(1.90182, -1.01858)
+scale = Vector2(3.5, 2)
+collision_layer = 8
 collision_mask = 5
 script = ExtResource("3_c5i7s")
 

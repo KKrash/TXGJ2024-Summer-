@@ -1,11 +1,13 @@
 extends CharacterBody2D
 const SPEED = 100
 var projectileScene : PackedScene = preload("res://Assets/Misc/Projectiles/LaserBlast.tscn")
-var shootForce : float = 150.0
+var shootForce : float = 400.0
 var cooldown_time = 0.5  # Cooldown time in seconds
 var last_attack_time = 0  # Time of the last attack
 var can_attack = true
 var gravity : float = 500.0
+func _ready():
+	$AnimatedSprite2D.play("default")
 func _physics_process(delta):
 	if last_attack_time == 0 and !can_attack:
 		can_attack = true
@@ -32,7 +34,7 @@ func _process(delta):
 	return
 	
 func shoot():
-	var targetPosition = position+Vector2(25,0)
+	var targetPosition = position+Vector2(100,-10)
 	if can_attack:
 		last_attack_time = 0.001
 		if projectileScene != null:
@@ -51,7 +53,7 @@ func shoot():
 		 # Connect collision signal
 		
 func shoot2():
-	var targetPosition = position+Vector2(0,15)
+	var targetPosition = position+Vector2(0,30)
 	if can_attack:
 		last_attack_time = 0.001
 		if projectileScene != null:

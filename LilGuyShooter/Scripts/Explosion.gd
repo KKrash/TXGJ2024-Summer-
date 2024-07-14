@@ -10,6 +10,7 @@ func _process(delta):
 	if(animation.frame == 3):
 		queue_free()
 func _on_BodyEntered(body):
+	print(body)
 	# Check if the colliding body should trigger removal
 	pass
 	

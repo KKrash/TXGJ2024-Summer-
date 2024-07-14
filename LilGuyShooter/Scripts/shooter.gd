@@ -73,3 +73,10 @@ func _shoot():
 	shootTimer.wait_time =waitTime
 	shootTimer.start()
 
+
+
+
+
+func _on_area_2d_area_entered(area):
+	queue_free()
+	pass # Replace with function body.

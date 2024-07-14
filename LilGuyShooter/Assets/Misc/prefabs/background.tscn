@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1qi1j60cdayk"]
+
+[ext_resource type="Texture2D" uid="uid://bdrxarsgbagin" path="res://Sprites/sky.png" id="1_cw30t"]
+[ext_resource type="Script" path="res://Assets/Misc/prefabs/ParallaxLayer2.gd" id="2_7sd05"]
+[ext_resource type="Texture2D" uid="uid://dx5su5fbi5s87" path="res://Sprites/mountain-range.png" id="2_20irh"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+position = Vector2(317, 240)
+scale = Vector2(2, 2)
+motion_scale = Vector2(0, 1)
+motion_mirroring = Vector2(640, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+texture = ExtResource("1_cw30t")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+position = Vector2(640, 240)
+scale = Vector2(2, 2)
+motion_scale = Vector2(0.1, 1)
+motion_mirroring = Vector2(640, 0)
+script = ExtResource("2_7sd05")
+speed = -100.0
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
+texture = ExtResource("2_20irh")
