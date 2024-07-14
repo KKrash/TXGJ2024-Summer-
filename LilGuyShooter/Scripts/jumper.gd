@@ -52,3 +52,10 @@ func _on_timer_timeout():
 	var waitTime = rng.randf_range(0.3, 2.5)
 	my_timer.wait_time =waitTime
 	my_timer.start()
+
+
+
+
+func _on_area_2d_area_entered(area):
+	queue_free()
+	pass # Replace with function body.

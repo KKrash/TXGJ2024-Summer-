@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c5ecnpotkluin"]
+[gd_scene load_steps=8 format=3 uid="uid://c5ecnpotkluin"]
 
 [ext_resource type="PackedScene" uid="uid://djikr5p2elxey" path="res://Assets/Misc/prefabs/bullet.tscn" id="1_p03fv"]
 [ext_resource type="PackedScene" uid="uid://dar5eln4q8jv6" path="res://Assets/Misc/prefabs/groundpiece.tscn" id="2_kwv2c"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" path="res://Assets/Misc/prefabs/enemydirector.tscn" id="4_ygwi4"]
 [ext_resource type="PackedScene" path="res://Assets/Misc/prefabs/asteroiddirector.tscn" id="5_c7xcf"]
 [ext_resource type="PackedScene" uid="uid://bngy5crnj0bf8" path="res://Assets/Players/GuyandShip.tscn" id="6_5cogc"]
-[ext_resource type="PackedScene" uid="uid://c1qi1j60cdayk" path="res://Assets/Misc/prefabs/background.tscn" id="7_vrtky"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dw4vj"]
 distance = -384.0
@@ -140,5 +139,3 @@ script = ExtResource("3_kcyo5")
 
 [node name="GuyandShip" parent="." instance=ExtResource("6_5cogc")]
 position = Vector2(41, 356)
-
-[node name="ParallaxBackground" parent="." instance=ExtResource("7_vrtky")]

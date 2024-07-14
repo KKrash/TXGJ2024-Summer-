@@ -1,17 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://bmubeqikhh2hy"]
+[gd_scene load_steps=7 format=3 uid="uid://bmubeqikhh2hy"]
 
 [ext_resource type="Script" path="res://Scripts/Ship.gd" id="1_bnhe5"]
-[ext_resource type="Texture2D" uid="uid://ceh2d38cdexnw" path="res://Sprites/ShipBox.png" id="1_xw1pi"]
+[ext_resource type="Texture2D" uid="uid://c71as0vxngg7y" path="res://Sprites/assets-spritesheet.png" id="2_oqdes"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ws6s1"]
-atlas = ExtResource("1_xw1pi")
-region = Rect2(0, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryfo2"]
+atlas = ExtResource("2_oqdes")
+region = Rect2(176, 104, 160, 88)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_1kvvr"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ae303"]
+atlas = ExtResource("2_oqdes")
+region = Rect2(337, 104, 159, 88)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gcfs5"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ws6s1")
+"texture": SubResource("AtlasTexture_ryfo2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ae303")
 }],
 "loop": true,
 "name": &"default",
@@ -19,15 +26,19 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlw7u"]
-size = Vector2(32, 32)
+size = Vector2(122.267, 57.3006)
 
 [node name="Ship" type="CharacterBody2D"]
-scale = Vector2(1.20229, 0.484255)
+collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_bnhe5")
 
-[node name="AnimatedShip" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_1kvvr")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_gcfs5")
+frame_progress = 0.407884
 
 [node name="ShipCollision" type="CollisionShape2D" parent="."]
+position = Vector2(6.23809, -12.6503)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_nlw7u")
