@@ -23,7 +23,7 @@ func _on_Area2D_body_exited(body: Node) -> void:
 func _ready():
 	jumpTimer.timeout.connect(_jump)
 	jumpTimer.wait_time = 2.5
-	#shootTimer.timeout.connect(_shoot)
+	shootTimer.timeout.connect(_shoot)
 	shootTimer.wait_time = 2.5
 	shootTimer.start()
 	jumpTimer.start()
@@ -52,5 +52,6 @@ func _jump():
 	jumpTimer.wait_time =waitTime
 	jumpTimer.start()
 
-
+func _shoot():
+	pass
 

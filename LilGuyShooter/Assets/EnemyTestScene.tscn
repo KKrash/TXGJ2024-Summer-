@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://vclnmq5abuq5"]
+[gd_scene load_steps=17 format=3 uid="uid://vclnmq5abuq5"]
 
 [ext_resource type="Script" path="res://Scripts/jumper.gd" id="1_40vhp"]
 [ext_resource type="Texture2D" uid="uid://cq63i8c054hqw" path="res://icon.svg" id="2_k2tfs"]
 [ext_resource type="Script" path="res://Scripts/director.gd" id="3_m3qrm"]
 [ext_resource type="Texture2D" uid="uid://b1ny2py5ik4lf" path="res://Assets/Misc/Screenshot 2024-07-13 174728.png" id="4_qhgqg"]
 [ext_resource type="Script" path="res://Scripts/shooter.gd" id="4_uj53i"]
+[ext_resource type="PackedScene" uid="uid://djikr5p2elxey" path="res://Assets/Misc/prefabs/bullet.tscn" id="5_yvv03"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p34vx"]
 
@@ -92,6 +93,7 @@ collision_layer = 4
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-6.99979, 59)
 shape = SubResource("WorldBoundaryShape2D_dw4vj")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -128,3 +130,5 @@ shape = SubResource("RectangleShape2D_oyt5q")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="shooter/Area2D"]
 position = Vector2(0, 6)
 shape = SubResource("RectangleShape2D_4dxij")
+
+[node name="bullet" parent="." instance=ExtResource("5_yvv03")]
