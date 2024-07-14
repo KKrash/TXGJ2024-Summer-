@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://rqtsqytbdjqm"]
+
+[ext_resource type="PackedScene" uid="uid://bngy5crnj0bf8" path="res://Assets/Players/GuyandShip.tscn" id="1_hsins"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_o6pjb"]
+
+[node name="MainGame" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 6
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-3, 39)
+shape = SubResource("WorldBoundaryShape2D_o6pjb")
+
+[node name="GuyandShip" parent="." instance=ExtResource("1_hsins")]
+position = Vector2(-7, 1)
