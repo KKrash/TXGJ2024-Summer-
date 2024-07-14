@@ -9,7 +9,15 @@ func _ready():
 	apply_central_impulse(Vector2(-300, -300))
 	#connect("body_entered",callable)
 
-func body_entered (body):
+#func _on_body_entered (body):
+	#print("BULLETHIT")
+	#if body.has_method("hit"):
+		#body.hit()
+	#queue_free() 
+
+
+
+func _on_area_2d_body_entered(body):
 	print("BULLETHIT")
 	if body.has_method("hit"):
 		body.hit()

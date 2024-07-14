@@ -32,9 +32,11 @@ scale = Vector2(0.145833, 0.141509)
 sprite_frames = SubResource("SpriteFrames_jndva")
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 13
-collision_mask = 14
+collision_layer = 8
+collision_mask = 13
 script = ExtResource("3_xmr3d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_jilg5")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
