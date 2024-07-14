@@ -12,7 +12,7 @@ gradient = SubResource("Gradient_ovp3j")
 
 [node name="groundpiece" type="StaticBody2D"]
 collision_layer = 4
-collision_mask = 3
+collision_mask = 11
 script = ExtResource("1_wmd08")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
