@@ -28,16 +28,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlw7u"]
 size = Vector2(122.267, 57.3006)
 
-<<<<<<< Updated upstream
 [node name="Ship" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 2
-=======
-[node name="Ship" type="CharacterBody2D" groups=["ship"]]
-scale = Vector2(1.20229, 0.484255)
-collision_layer = 18
-collision_mask = 18
->>>>>>> Stashed changes
 script = ExtResource("1_bnhe5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -45,11 +38,7 @@ scale = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_gcfs5")
 frame_progress = 0.407884
 
-<<<<<<< Updated upstream
 [node name="ShipCollision" type="CollisionShape2D" parent="."]
 position = Vector2(6.23809, -12.6503)
 scale = Vector2(1, 1)
-=======
-[node name="ShipCollision" type="CollisionShape2D" parent="." groups=["ship"]]
->>>>>>> Stashed changes
 shape = SubResource("RectangleShape2D_nlw7u")

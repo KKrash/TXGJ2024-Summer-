@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c224sk0h68ltg"]
+[gd_scene load_steps=6 format=3 uid="uid://c224sk0h68ltg"]
 
 [ext_resource type="Script" path="res://Scripts/Ship.gd" id="1_8ed2i"]
 [ext_resource type="Texture2D" uid="uid://ceh2d38cdexnw" path="res://Sprites/ShipBox.png" id="1_428r6"]
@@ -21,24 +21,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4t05a"]
 size = Vector2(32, 32)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_eulta"]
-size = Vector2(32, 32)
-
-[node name="ShipBody" type="CharacterBody2D" groups=["ship"]]
-collision_layer = 2
-collision_mask = 18
+[node name="ShipBody" type="CharacterBody2D"]
 script = ExtResource("1_8ed2i")
-metadata/_edit_group_ = true
 
 [node name="AnimatedShipSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_etqy1")
 
-[node name="ShipCollision" type="CollisionShape2D" parent="." groups=["ship"]]
+[node name="ShipCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_4t05a")
-
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 18
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["ship"]]
-shape = SubResource("RectangleShape2D_eulta")

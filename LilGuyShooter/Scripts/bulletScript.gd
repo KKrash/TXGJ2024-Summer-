@@ -18,8 +18,8 @@ func _ready():
 
 
 func _on_area_2d_body_entered(body):
+	print("BULLETHIT")
 	if body.is_in_group("player"):
-		#print("BULLETHIT")
-		if body.has_method("_damagePlayer"):
-			body._damagePlayer()
+		if body.has_method("hit"):
+			body.hit()
 	queue_free() 
