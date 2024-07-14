@@ -1,10 +1,10 @@
 extends CharacterBody2D
 signal hit
 
-const SPEED = 50.0
+const SPEED = 150.0
 const JUMP_VELOCITY = -300.0
 @onready var AnimatedGuy = $AnimatedSpaceMan
-
+@onready var hitbox = $Area2D/CollisionShape2D
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -44,3 +44,9 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+
+func _on_area_2d_area_entered(area):
+	if area.is_in_group("Boom"):
+		print("OW FUCK")
+	pass # Replace with function body.

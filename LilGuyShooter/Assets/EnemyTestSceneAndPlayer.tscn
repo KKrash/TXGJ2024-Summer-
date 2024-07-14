@@ -1,0 +1,141 @@
+[gd_scene load_steps=8 format=3 uid="uid://c5ecnpotkluin"]
+
+[ext_resource type="PackedScene" uid="uid://djikr5p2elxey" path="res://Assets/Misc/prefabs/bullet.tscn" id="1_p03fv"]
+[ext_resource type="PackedScene" path="res://Assets/Misc/prefabs/groundpiece.tscn" id="2_kwv2c"]
+[ext_resource type="Script" path="res://Scripts/groundspawner.gd" id="3_kcyo5"]
+[ext_resource type="PackedScene" path="res://Assets/Misc/prefabs/enemydirector.tscn" id="4_ygwi4"]
+[ext_resource type="PackedScene" path="res://Assets/Misc/prefabs/asteroiddirector.tscn" id="5_c7xcf"]
+[ext_resource type="PackedScene" uid="uid://bngy5crnj0bf8" path="res://Assets/Players/GuyandShip.tscn" id="6_5cogc"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dw4vj"]
+distance = -384.0
+
+[node name="EnemyTestScene" type="Node2D"]
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(421, 291)
+rotation = 1.5708
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-6.99979, 59)
+shape = SubResource("WorldBoundaryShape2D_dw4vj")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="bullet" parent="." instance=ExtResource("1_p03fv")]
+
+[node name="groundpiece" parent="." instance=ExtResource("2_kwv2c")]
+position = Vector2(0, 400)
+
+[node name="groundpiece2" parent="." instance=ExtResource("2_kwv2c")]
+position = Vector2(30, 400)
+
+[node name="groundpiece3" parent="." instance=ExtResource("2_kwv2c")]
+position = Vector2(60, 400)
+
+[node name="groundpiece4" parent="." instance=ExtResource("2_kwv2c")]
+position = Vector2(90, 400)
+
+[node name="groundpiece5" parent="." instance=ExtResource("2_kwv2c")]
+position = Vector2(120, 400)
+
+[node name="groundpiece6" parent="." instance=ExtResource("2_kwv2c")]
+position = Vector2(151, 400)
+
+[node name="groundpiece7" parent="." instance=ExtResource("2_kwv2c")]
+position = Vector2(181, 400)
+
+[node name="groundpiece8" parent="." instance=ExtResource("2_kwv2c")]
+position = Vector2(211, 400)
+
+[node name="groundpiece9" parent="." instance=ExtResource("2_kwv2c")]
+position = Vector2(241, 400)
+
+[node name="groundpiece10" parent="." instance=ExtResource("2_kwv2c")]
+position = Vector2(271, 400)
+
+[node name="groundpiece11" parent="." instance=ExtResource("2_kwv2c")]
+position = Vector2(302, 400)
+
+[node name="groundpiece12" parent="." instance=ExtResource("2_kwv2c")]
+position = Vector2(332, 400)
+
+[node name="groundpiece13" parent="." instance=ExtResource("2_kwv2c")]
+position = Vector2(362, 400)
+
+[node name="groundpiece14" parent="." instance=ExtResource("2_kwv2c")]
+position = Vector2(392, 400)
+
+[node name="groundpiece15" parent="." instance=ExtResource("2_kwv2c")]
+position = Vector2(422, 400)
+
+[node name="groundpiece16" parent="." instance=ExtResource("2_kwv2c")]
+position = Vector2(453, 400)
+
+[node name="groundpiece17" parent="." instance=ExtResource("2_kwv2c")]
+position = Vector2(483, 400)
+
+[node name="groundpiece18" parent="." instance=ExtResource("2_kwv2c")]
+position = Vector2(513, 400)
+
+[node name="groundpiece19" parent="." instance=ExtResource("2_kwv2c")]
+position = Vector2(543, 400)
+
+[node name="groundpiece20" parent="." instance=ExtResource("2_kwv2c")]
+position = Vector2(573, 400)
+
+[node name="groundpiece21" parent="." instance=ExtResource("2_kwv2c")]
+position = Vector2(604, 400)
+
+[node name="groundpiece22" parent="." instance=ExtResource("2_kwv2c")]
+position = Vector2(634, 400)
+
+[node name="groundpiece23" parent="." instance=ExtResource("2_kwv2c")]
+position = Vector2(664, 400)
+
+[node name="groundpiece24" parent="." instance=ExtResource("2_kwv2c")]
+position = Vector2(694, 400)
+
+[node name="groundpiece25" parent="." instance=ExtResource("2_kwv2c")]
+position = Vector2(724, 400)
+
+[node name="groundpiece26" parent="." instance=ExtResource("2_kwv2c")]
+position = Vector2(755, 400)
+
+[node name="groundpiece27" parent="." instance=ExtResource("2_kwv2c")]
+position = Vector2(785, 400)
+
+[node name="groundpiece28" parent="." instance=ExtResource("2_kwv2c")]
+position = Vector2(815, 400)
+
+[node name="groundpiece29" parent="." instance=ExtResource("2_kwv2c")]
+position = Vector2(845, 400)
+
+[node name="groundpiece30" parent="." instance=ExtResource("2_kwv2c")]
+position = Vector2(875, 400)
+
+[node name="groundpiece31" parent="." instance=ExtResource("2_kwv2c")]
+position = Vector2(907, 401)
+
+[node name="groundpiece32" parent="." instance=ExtResource("2_kwv2c")]
+position = Vector2(937, 401)
+
+[node name="groundpiece33" parent="." instance=ExtResource("2_kwv2c")]
+position = Vector2(967, 401)
+
+[node name="groundpiece34" parent="." instance=ExtResource("2_kwv2c")]
+position = Vector2(997, 401)
+
+[node name="groundspawner" type="Node2D" parent="."]
+script = ExtResource("3_kcyo5")
+
+[node name="Timer" type="Timer" parent="groundspawner"]
+
+[node name="enemydirector" parent="." instance=ExtResource("4_ygwi4")]
+
+[node name="asteroiddirector" parent="." instance=ExtResource("5_c7xcf")]
+
+[node name="GuyandShip" parent="." instance=ExtResource("6_5cogc")]
+position = Vector2(41, 356)

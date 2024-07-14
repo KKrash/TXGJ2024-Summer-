@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://vclnmq5abuq5"]
+[gd_scene load_steps=7 format=3 uid="uid://vclnmq5abuq5"]
 
-[ext_resource type="Script" path="res://Scripts/director.gd" id="3_m3qrm"]
+[ext_resource type="PackedScene" path="res://Assets/Misc/prefabs/enemydirector.tscn" id="4_kg0k8"]
+[ext_resource type="PackedScene" path="res://Assets/Misc/prefabs/asteroiddirector.tscn" id="5_6bboq"]
 [ext_resource type="PackedScene" uid="uid://djikr5p2elxey" path="res://Assets/Misc/prefabs/bullet.tscn" id="5_yvv03"]
-[ext_resource type="PackedScene" uid="uid://bx1xnk28drd8t" path="res://Assets/Misc/prefabs/groundpiece.tscn" id="7_knu7j"]
+[ext_resource type="PackedScene" path="res://Assets/Misc/prefabs/groundpiece.tscn" id="7_knu7j"]
 [ext_resource type="Script" path="res://Scripts/groundspawner.gd" id="8_lvthb"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dw4vj"]
@@ -19,11 +20,6 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(-6.99979, 59)
 shape = SubResource("WorldBoundaryShape2D_dw4vj")
-
-[node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("3_m3qrm")
-
-[node name="Timer" type="Timer" parent="Area2D"]
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -135,3 +131,7 @@ position = Vector2(997, 401)
 script = ExtResource("8_lvthb")
 
 [node name="Timer" type="Timer" parent="groundspawner"]
+
+[node name="enemydirector" parent="." instance=ExtResource("4_kg0k8")]
+
+[node name="asteroiddirector" parent="." instance=ExtResource("5_6bboq")]

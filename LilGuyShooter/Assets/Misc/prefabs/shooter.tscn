@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://djn15p7c63ig3"]
+[gd_scene load_steps=7 format=3 uid="uid://wej43x7mrb0l"]
 
 [ext_resource type="Script" path="res://Scripts/shooter.gd" id="1_s2efy"]
 [ext_resource type="Texture2D" uid="uid://b1ny2py5ik4lf" path="res://Assets/Misc/Screenshot 2024-07-13 174728.png" id="2_vh747"]
