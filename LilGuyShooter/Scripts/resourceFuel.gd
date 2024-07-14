@@ -1,8 +1,8 @@
 extends Sprite2D
-signal obtainedFuel
 
-func _on_area_2d_body_entered(body):
+func _on_area_2d_body_entered(_body):
 	hide()
+	GlobalVars.currentFuel += 1
 	GlobalVars.score+=10
 
 func _on_visibility_changed():
