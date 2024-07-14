@@ -6,6 +6,8 @@ func _ready():
 #
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	if GlobalVars.lives != GlobalVars.max_lives:
+		decrementBar()
 	if GlobalVars.lives == 0:
 		game_over()
 	if GlobalVars.currentFuel <= 0:
@@ -17,9 +19,11 @@ func _on_score_timer_timeout():
 
 func new_game():
 	GlobalVars.score = 0
+	GlobalVars.lives = 3
+	GlobalVars.max_lives = 3;
 	var size_of_bar = Vector2(GlobalVars.currentFuel, 5)
 	$HUD/FuelBar.set_size(size_of_bar)
-	var size_of_lives = Vector2(GlobalVars.lives*5, 5)
+	var size_of_lives = Vector2(GlobalVars.lives*32, 32)
 	$"HUD/sprite for heart".set_size(size_of_lives)
 	$ResourceTimer.start()
 	$"Fuel Decrease".start()
@@ -36,5 +40,5 @@ func _on_fuel_decrease_timeout():
 	#print($HUD/FuelBar.get_size())
 	
 func decrementBar():
-	var anotherSize = Vector2(5*GlobalVars.lives, 5)
+	var anotherSize = Vector2(32*GlobalVars.lives, 32)
 	$"HUD/sprite for heart".set_size(anotherSize)
