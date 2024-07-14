@@ -34,11 +34,9 @@ collision_mask = 2
 script = ExtResource("1_bnhe5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_gcfs5")
 frame_progress = 0.407884
 
 [node name="ShipCollision" type="CollisionShape2D" parent="."]
 position = Vector2(6.23809, -12.6503)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_nlw7u")
