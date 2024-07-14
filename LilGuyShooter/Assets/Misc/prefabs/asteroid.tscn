@@ -8,8 +8,6 @@
 radius = 21.0
 
 [node name="asteroid" type="RigidBody2D"]
-collision_layer = 18
-collision_mask = 18
 gravity_scale = 0.0
 script = ExtResource("1_3ojxk")
 
@@ -19,7 +17,7 @@ scale = Vector2(30, 32)
 texture = SubResource("CanvasTexture_y14v5")
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 18
+collision_layer = 17
 collision_mask = 18
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]

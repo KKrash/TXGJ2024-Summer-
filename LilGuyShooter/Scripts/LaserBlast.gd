@@ -3,6 +3,7 @@ var callable = Callable(self, "_on_BodyEntered")
 var explosionScene : PackedScene = preload("res://Assets/Misc/Projectiles/Explosion.tscn")
 @onready var sprite = $AnimatedSprite2D
 func _ready():
+	$Area2D/AudioStreamPlayer2D.play()
 	sprite.play("default")
 	connect("body_entered",callable)
 

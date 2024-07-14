@@ -6,4 +6,4 @@ func _on_area_2d_body_entered(_body):
 	GlobalVars.score += 50
 
 func _on_visibility_changed():
-	call_deferred("free")
+	queue_free()
