@@ -2,12 +2,15 @@ extends Node2D
 
 ## Called when the node enters the scene tree for the first time.
 func _ready():
-	#pass # Replace with function body.
 	new_game()
 #
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-	#pass
+func _process(_delta):
+	if GlobalVars.lives == 0:
+		game_over()
+	if GlobalVars.fuelPercentage <= 0:
+		game_over()
+	
 
 func _on_score_timer_timeout():
 	GlobalVars.score+=1
@@ -15,10 +18,25 @@ func _on_score_timer_timeout():
 
 func new_game():
 	GlobalVars.score = 0
+	var size_of_bar = Vector2(GlobalVars.currentFuel, 5)
+	$HUD/FuelBar.set_size(size_of_bar)
+	var size_of_lives = Vector2(GlobalVars.lives*5, 5)
+	$"HUD/sprite for heart".set_size(size_of_lives)
 	$ResourceTimer.start()
+	$"Fuel Decrease".start()
 	$HUD.update_score(GlobalVars.score)
 	
 func game_over():
-	$Score_Timer.stop()
+	$ScoreTimer.stop()
 	get_tree().change_scene_to_file("res://ending_scene.tscn")
 
+func _on_fuel_decrease_timeout():
+	GlobalVars.currentFuel-=.25
+	#GlobalVars.fuelPercentage -= 1
+	var newSize = Vector2(GlobalVars.currentFuel, $HUD/FuelBar.get_size().y)
+	$HUD/FuelBar.set_size(newSize)
+	#print($HUD/FuelBar.get_size())
+	
+func decrementBar():
+	var anotherSize = Vector2(5*GlobalVars.lives, 5)
+	$"HUD/sprite for heart".set_size(anotherSize)
