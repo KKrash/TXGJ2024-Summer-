@@ -54,7 +54,7 @@ func _jump():
 	jumpTimer.start()
 
 func _shoot():
-	var targetPosition = position-Vector2(25,0)
+	var targetPosition = position-Vector2(0,25)
 	shootTimer.stop()
 	
 	if bullet != null:
