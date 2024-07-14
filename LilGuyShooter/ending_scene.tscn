@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://b53vtudjr53ob"]
+
+[node name="Ending Scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_top = 102.0
+offset_right = 957.0
+offset_bottom = 137.0
+text = "System Offline."
+horizontal_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 391.0
+offset_top = 385.0
+offset_right = 573.0
+offset_bottom = 425.0
+
+[node name="Label" type="Label" parent="TextureButton"]
+layout_mode = 0
+offset_right = 194.0
+offset_bottom = 50.0
+text = "Try... again?"
+horizontal_alignment = 1
+vertical_alignment = 1

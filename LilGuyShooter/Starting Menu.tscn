@@ -1,9 +1,62 @@
-[gd_scene format=3 uid="uid://cs858ilu7pxsb"]
+[gd_scene load_steps=3 format=3 uid="uid://cs858ilu7pxsb"]
 
-[node name="Control" type="Control"]
+[ext_resource type="Script" path="res://TxtrButton.gd" id="1_635kg"]
+[ext_resource type="Script" path="res://Starting Menu.gd" id="1_eukgo"]
+
+[node name="StartingMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_eukgo")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 19.0
+offset_right = 879.0
+offset_bottom = 166.0
+text = "TITLE OF THE GAME HERE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 407.0
+offset_top = 215.0
+offset_right = 545.0
+offset_bottom = 287.0
+script = ExtResource("1_635kg")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 23.0
+offset_right = 93.0
+offset_bottom = 46.0
+text = "Start"
+
+[node name="Button2" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 414.0
+offset_top = 337.0
+offset_right = 552.0
+offset_bottom = 409.0
+script = ExtResource("1_635kg")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Button2"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 25.0
+offset_right = 94.0
+offset_bottom = 48.0
+text = "Credits"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://oistpj41jlo6"]
+
+[ext_resource type="Script" path="res://credits_menu.gd" id="1_o65qp"]
+
+[node name="Credits Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o65qp")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 963.0
+offset_bottom = 480.0
+text = "CREDITS
+
++PROGRAMMERS+
+RAYHAAN
+ISAAC
+KARAH (KSQUARETHINGS)
+
++MUSIC AND SOUND EFFECTS+
+JAMES
+
++ART+
+BRANDON (SUS)
+"
+horizontal_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 371.0
+offset_top = 387.0
+offset_right = 600.0
+offset_bottom = 427.0
+
+[node name="Label" type="Label" parent="TextureButton"]
+layout_mode = 0
+offset_top = -8.0
+offset_right = 245.0
+offset_bottom = 43.0
+text = "BACK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
