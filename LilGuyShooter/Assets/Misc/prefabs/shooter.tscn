@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://djn15p7c63ig3"]
+
+[ext_resource type="Script" path="res://Scripts/shooter.gd" id="1_s2efy"]
+[ext_resource type="Texture2D" uid="uid://b1ny2py5ik4lf" path="res://Assets/Misc/Screenshot 2024-07-13 174728.png" id="2_vh747"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_n7gmd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yxdi2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vh747")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oyt5q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4dxij"]
+size = Vector2(20, 10)
+
+[node name="shooter" type="RigidBody2D"]
+collision_layer = 6
+collision_mask = 5
+physics_material_override = SubResource("PhysicsMaterial_n7gmd")
+script = ExtResource("1_s2efy")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4.76837e-07, 5.96046e-08)
+scale = Vector2(0.056444, 0.0939307)
+sprite_frames = SubResource("SpriteFrames_yxdi2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_oyt5q")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Timer2" type="Timer" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_4dxij")
