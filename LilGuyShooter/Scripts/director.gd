@@ -57,4 +57,7 @@ func _spawnEnemy():
 func _newGround():
 	groundTimer.stop()
 	#instantiate ground
+	var randomchangei=rng.randi_range(-1,1)
+	var randomchange=randomchangei/10.0
+	elevation+=randomchange
 	groundTimer.start()
