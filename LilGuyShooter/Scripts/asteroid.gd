@@ -15,3 +15,11 @@ func _process(delta):
 
 func _physics_process(delta):
 	pass
+
+
+func _on_area_2d_body_entered(body):
+	#print("ASTEROIDHIT")
+	if body.is_in_group("ship"):
+		if body.has_method("_damageFuel"):
+			body._damageFuel()
+	queue_free() 

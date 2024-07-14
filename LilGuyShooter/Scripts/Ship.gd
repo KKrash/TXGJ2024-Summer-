@@ -70,3 +70,6 @@ func shoot2():
 				projectileInstance.linear_velocity = initialVelocity
 
 					
+func _damageFuel():
+	GlobalVars.fuelPercentage-=10
+	#print("ASTEROID HIT SHIP "+str(GlobalVars.fuelPercentage))

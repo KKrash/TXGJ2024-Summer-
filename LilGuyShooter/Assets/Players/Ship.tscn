@@ -28,15 +28,15 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlw7u"]
 size = Vector2(122.267, 57.3006)
 
-[node name="Ship" type="CharacterBody2D"]
+[node name="Ship" type="CharacterBody2D" groups=["ship"]]
 collision_layer = 2
-collision_mask = 2
+collision_mask = 18
 script = ExtResource("1_bnhe5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gcfs5")
 frame_progress = 0.407884
 
-[node name="ShipCollision" type="CollisionShape2D" parent="."]
+[node name="ShipCollision" type="CollisionShape2D" parent="." groups=["ship"]]
 position = Vector2(6.23809, -12.6503)
 shape = SubResource("RectangleShape2D_nlw7u")
