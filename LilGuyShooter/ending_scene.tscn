@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://b53vtudjr53ob"]
+[gd_scene load_steps=4 format=3 uid="uid://b53vtudjr53ob"]
 
 [ext_resource type="Script" path="res://Scripts/ending_scene.gd" id="1_7blij"]
+[ext_resource type="Script" path="res://HUD pt2.gd" id="2_k5g6n"]
+[ext_resource type="Script" path="res://TextureButtonScript.gd" id="2_t72x8"]
 
 [node name="Ending Scene" type="Control"]
 layout_mode = 3
@@ -21,16 +23,30 @@ horizontal_alignment = 1
 
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 391.0
-offset_top = 385.0
-offset_right = 573.0
-offset_bottom = 425.0
+offset_left = 413.0
+offset_top = 381.0
+offset_right = 595.0
+offset_bottom = 421.0
+script = ExtResource("2_t72x8")
 
 [node name="Label" type="Label" parent="TextureButton"]
+visible = false
 layout_mode = 0
 offset_right = 194.0
 offset_bottom = 50.0
 text = "Try... again?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HUD pt2" type="CanvasLayer" parent="."]
+script = ExtResource("2_k5g6n")
+
+[node name="Score" type="Label" parent="HUD pt2"]
+offset_left = 176.0
+offset_top = 131.0
+offset_right = 774.0
+offset_bottom = 182.0
+text = "Score: 0000000"
 horizontal_alignment = 1
 vertical_alignment = 1
 

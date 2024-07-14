@@ -13,31 +13,46 @@ script = ExtResource("1_o65qp")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_right = 963.0
-offset_bottom = 480.0
-text = "CREDITS
-
-+PROGRAMMERS+
-RAYHAAN
-ISAAC
-KARAH (KSQUARETHINGS)
-
-+MUSIC AND SOUND EFFECTS+
-JAMES
-
-+ART+
-BRANDON (SUS)
-"
+offset_right = 960.0
+offset_bottom = 23.0
+text = "CREDITS"
 horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 347.0
+offset_top = 77.0
+offset_right = 628.0
+offset_bottom = 109.0
+text = "+Programmers+"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 78.0
+offset_right = 249.0
+offset_bottom = 101.0
+text = "+Artist+"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 719.0
+offset_top = 75.0
+offset_right = 959.0
+offset_bottom = 98.0
+text = "+Music and Sound Effects+"
 
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 371.0
-offset_top = 387.0
-offset_right = 600.0
-offset_bottom = 427.0
+offset_left = 363.0
+offset_top = 404.0
+offset_right = 592.0
+offset_bottom = 444.0
+metadata/_edit_group_ = true
 
-[node name="Label" type="Label" parent="TextureButton"]
+[node name="Label3" type="Label" parent="TextureButton"]
 layout_mode = 0
 offset_top = -8.0
 offset_right = 245.0
