@@ -26,11 +26,13 @@ script = ExtResource("1_cldhk")
 offset_right = 962.0
 offset_bottom = 478.0
 texture = ExtResource("2_12yup")
+metadata/_edit_lock_ = true
 
 [node name="mountain" type="TextureRect" parent="."]
 offset_right = 962.0
 offset_bottom = 478.0
 texture = ExtResource("3_ngjjm")
+metadata/_edit_lock_ = true
 
 [node name="Lil Man" type="CharacterBody2D" parent="."]
 script = ExtResource("4_orumn")
@@ -75,13 +77,12 @@ offset_bottom = 26.0
 text = "9999999"
 
 [node name="sprite for heart" type="TextureRect" parent="HUD"]
-offset_left = -11.0
-offset_top = 47.0
-offset_right = 21.0
-offset_bottom = 79.0
+offset_top = 62.0
+offset_right = 32.0
+offset_bottom = 94.0
 scale = Vector2(3.8, 3.39)
 texture = ExtResource("5_ccpcy")
-metadata/_edit_lock_ = true
+stretch_mode = 1
 
 [node name="FuelBar" type="TextureRect" parent="HUD"]
 offset_left = 11.0
