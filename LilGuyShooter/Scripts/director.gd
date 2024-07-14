@@ -5,16 +5,20 @@ extends Node
 var speed=20
 var rng = RandomNumberGenerator.new()
 var time_elapsed = 0.0
-
+var elevation=0.0
 
 @onready var rockTimer = $Timer
 @onready var enemyTimer = $Timer
+@onready var groundTimer = $Timer
 
 func _ready():
 	rockTimer.timeout.connect(_spawnRock)
 	rockTimer.wait_time = 3.0
 	enemyTimer.timeout.connect(_spawnEnemy)
 	enemyTimer.wait_time = 3.0
+	groundTimer.timeout.connect(_newGround)
+	groundTimer.wait_time = 0.5
+	groundTimer.start()
 	rockTimer.start()
 	enemyTimer.start()
 	
@@ -48,3 +52,9 @@ func _spawnEnemy():
 	enemyTimer.wait_time =waitTime-(speed/60)
 	enemyTimer.start()
 	print("enemy: "+str(enemyTimer.time_left))
+
+
+func _newGround():
+	groundTimer.stop()
+	#instantiate ground
+	groundTimer.start()

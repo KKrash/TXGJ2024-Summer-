@@ -1,5 +1,5 @@
 extends RigidBody2D
-
+var bullet : PackedScene = preload("res://Assets/Misc/prefabs/bullet.tscn")
 @onready var jumpTimer = $Timer
 @onready var shootTimer = $Timer
 
@@ -11,6 +11,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var time=0;
 var on_ground = 0
+var shootForce : float = 800.0
 
 var rng = RandomNumberGenerator.new()
 func _on_Area2D_body_entered(body: Node) -> void:
@@ -53,7 +54,20 @@ func _jump():
 	jumpTimer.start()
 
 func _shoot():
+	var targetPosition = position-Vector2(25,0)
 	shootTimer.stop()
+	
+	if bullet != null:
+		var bulletInstance: RigidBody2D = bullet.instantiate()
+		if bulletInstance != null:
+			# Add the projectile to the scene
+			get_parent().add_child(bulletInstance)
+			bulletInstance.position = targetPosition
+			# Calculate direction and initial velocity
+			var direction = Vector2(-.5,-.5)
+			var initialVelocity = direction * shootForce
+			bulletInstance.linear_velocity = initialVelocity
+	
 	#add_child(load("res://Assets/Misc/prefabs/bullet.tscn").instance())
 	var waitTime = rng.randf_range(3, 6)
 	shootTimer.wait_time =waitTime
