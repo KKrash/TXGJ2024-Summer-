@@ -38,7 +38,7 @@ func shoot():
 	var targetPosition = position+Vector2(100,-10)
 	
 	if can_attack:
-		$AudioStreamPlayer2D2.play(0.35)
+		$AudioStreamPlayer2D2.play(0.0)
 		last_attack_time = 0.001
 		if projectileScene != null:
 			var projectileInstance: RigidBody2D = projectileScene.instantiate()
@@ -56,7 +56,7 @@ func shoot():
 		 # Connect collision signal
 		
 func shoot2():
-	$AudioStreamPlayer2D2.play(0.35)
+	$AudioStreamPlayer2D2.play(0.0)
 	var targetPosition = position+Vector2(0,30)
 	if can_attack:
 		last_attack_time = 0.001
