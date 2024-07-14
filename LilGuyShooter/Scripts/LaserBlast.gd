@@ -1,7 +1,9 @@
 extends RigidBody2D
 var callable = Callable(self, "_on_BodyEntered")
 var explosionScene : PackedScene = preload("res://Assets/Misc/Projectiles/Explosion.tscn")
+@onready var sprite = $AnimatedSprite2D
 func _ready():
+	sprite.play("default")
 	connect("body_entered",callable)
 
 func _on_BodyEntered(body):

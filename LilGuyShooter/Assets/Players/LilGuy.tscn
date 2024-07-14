@@ -1,25 +1,71 @@
-[gd_scene load_steps=6 format=3 uid="uid://cn08nyghidn3u"]
+[gd_scene load_steps=11 format=3 uid="uid://cn08nyghidn3u"]
 
-[ext_resource type="Texture2D" uid="uid://cymic3r32lbu2" path="res://Sprites/PlayerBox.png" id="1_o1k1d"]
 [ext_resource type="Script" path="res://Scripts/LilGuy.gd" id="1_ycywk"]
+[ext_resource type="Texture2D" uid="uid://c71as0vxngg7y" path="res://Sprites/assets-spritesheet.png" id="2_6dtah"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bq81t"]
-atlas = ExtResource("1_o1k1d")
-region = Rect2(0, 0, 8, 8)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ns3gy"]
+atlas = ExtResource("2_6dtah")
+region = Rect2(16, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nkkxp"]
+atlas = ExtResource("2_6dtah")
+region = Rect2(48, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5h2xd"]
+atlas = ExtResource("2_6dtah")
+region = Rect2(16, 80, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82u61"]
+atlas = ExtResource("2_6dtah")
+region = Rect2(49, 80, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n1c1k"]
+atlas = ExtResource("2_6dtah")
+region = Rect2(82, 80, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0sb8"]
+atlas = ExtResource("2_6dtah")
+region = Rect2(115, 80, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sqeol"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bq81t")
+"texture": SubResource("AtlasTexture_ns3gy")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nkkxp")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5h2xd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82u61")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n1c1k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0sb8")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 8.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4t05a"]
-size = Vector2(8, 8)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hgobx"]
+radius = 2.17373
+height = 20.2648
 
 [node name="SpaceMan" type="CharacterBody2D"]
 collision_mask = 4
@@ -27,6 +73,10 @@ script = ExtResource("1_ycywk")
 
 [node name="AnimatedSpaceMan" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_sqeol")
+animation = &"jump"
 
 [node name="SpaceManCollision" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_4t05a")
+position = Vector2(2.98023e-08, 5)
+rotation = 0.0577171
+scale = Vector2(1.7782, 1.14847)
+shape = SubResource("CapsuleShape2D_hgobx")

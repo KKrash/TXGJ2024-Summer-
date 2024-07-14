@@ -1,26 +1,64 @@
-[gd_scene load_steps=5 format=3 uid="uid://dl4ayutvgw7nw"]
+[gd_scene load_steps=11 format=3 uid="uid://dl4ayutvgw7nw"]
 
-[ext_resource type="Texture2D" uid="uid://cq63i8c054hqw" path="res://icon.svg" id="1_htmna"]
 [ext_resource type="Script" path="res://Scripts/LaserBlast.gd" id="1_wwkaj"]
+[ext_resource type="Texture2D" uid="uid://c71as0vxngg7y" path="res://Sprites/assets-spritesheet.png" id="2_eoahi"]
 [ext_resource type="Script" path="res://Scripts/CollisionBomb.gd" id="3_c5i7s"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bh355"]
-size = Vector2(20, 9)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ubb7a"]
+atlas = ExtResource("2_eoahi")
+region = Rect2(16, 304, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1tex"]
+atlas = ExtResource("2_eoahi")
+region = Rect2(33, 304, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5m0j"]
+atlas = ExtResource("2_eoahi")
+region = Rect2(50, 304, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpq37"]
+atlas = ExtResource("2_eoahi")
+region = Rect2(67, 304, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hjtdc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ubb7a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1tex")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x5m0j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpq37")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2bftf"]
+radius = 10.9717
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w1psf"]
 
 [node name="LaserBlast" type="RigidBody2D"]
 collision_layer = 6
 collision_mask = 6
 script = ExtResource("1_wwkaj")
 
-[node name="Icon" type="Sprite2D" parent="."]
-scale = Vector2(-0.0830604, 0.070354)
-texture = ExtResource("1_htmna")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_hjtdc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -5.96046e-08)
+position = Vector2(-3.18086e-08, 0.210658)
 rotation = -3.14159
-scale = Vector2(0.273898, -0.982515)
-shape = SubResource("RectangleShape2D_bh355")
+scale = Vector2(0.297, -0.263834)
+shape = SubResource("CircleShape2D_2bftf")
 
 [node name="Area2D" type="Area2D" parent="."]
 scale = Vector2(1.90182, -1.01858)
@@ -29,8 +67,8 @@ script = ExtResource("3_c5i7s")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(1.19209e-07, -5.96046e-08)
 rotation = -3.14159
-scale = Vector2(0.273898, -0.982515)
-shape = SubResource("RectangleShape2D_bh355")
+scale = Vector2(0.182, -0.33)
+shape = SubResource("CircleShape2D_w1psf")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
