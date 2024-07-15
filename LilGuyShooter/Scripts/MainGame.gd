@@ -2,7 +2,11 @@ extends Node2D
 
 ## Called when the node enters the scene tree for the first time.
 func _ready():
-	new_game()
+	new_game()	
+	var bg_music := AudioStreamPlayer.new()
+	bg_music.stream = load("res://Assets/Audio/AmbienceMusicV7.mp3")
+	bg_music.autoplay = true
+	add_child(bg_music)
 #
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

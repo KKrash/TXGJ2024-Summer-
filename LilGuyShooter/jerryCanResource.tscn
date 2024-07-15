@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_88kn4"]
 size = Vector2(22.2698, 20.4612)
 
-[node name="jerryCanResource" type="Node2D"]
+[node name="jerryCanResource" type="RigidBody2D"]
 
 [node name="resourceThing" type="Sprite2D" parent="."]
 position = Vector2(169, 110)

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://duk6jcs557t7g"]
+
+[ext_resource type="Script" path="res://Scripts/resourcedirector.gd" id="1_mgyqe"]
+
+[node name="resourceDirector" type="Node2D"]
+script = ExtResource("1_mgyqe")
+
+[node name="Timer" type="Timer" parent="."]
