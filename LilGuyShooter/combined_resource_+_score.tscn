@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b0yt02mf1cg77"]
+[gd_scene load_steps=16 format=3 uid="uid://b0yt02mf1cg77"]
 
 [ext_resource type="Script" path="res://Scripts/MainGame.gd" id="1_cldhk"]
 [ext_resource type="Texture2D" uid="uid://bdrxarsgbagin" path="res://Sprites/sky.png" id="2_12yup"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://njgtpnneyi8p" path="res://Sprites/fuel-bar-ui.png" id="7_w7253"]
 [ext_resource type="PackedScene" uid="uid://bf743ovm6elo8" path="res://crystal_1_resource.tscn" id="9_saarq"]
 [ext_resource type="PackedScene" uid="uid://63rwjhu66425" path="res://crystal_2_resource.tscn" id="10_frwhy"]
+[ext_resource type="AudioStream" uid="uid://doprskrp2m8ya" path="res://Assets/Audio/AmbienceMusicV7.mp3" id="13_u6sgo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_72cfr"]
 size = Vector2(26, 29)
@@ -113,6 +114,9 @@ metadata/_edit_lock_ = true
 [node name="ResourceTimer" type="Timer" parent="."]
 
 [node name="Fuel Decrease" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_u6sgo")
 
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
 [connection signal="timeout" from="ResourceTimer" to="." method="_on_resource_timer_timeout"]
