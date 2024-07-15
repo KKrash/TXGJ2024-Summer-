@@ -71,12 +71,8 @@ height = 20.2648
 radius = 4.99175
 height = 24.0
 
-<<<<<<< Updated upstream
-[node name="SpaceMan" type="CharacterBody2D"]
-=======
 [node name="SpaceMan" type="CharacterBody2D" groups=["player"]]
 collision_mask = 65
->>>>>>> Stashed changes
 script = ExtResource("1_ycywk")
 
 [node name="AnimatedSpaceMan" type="AnimatedSprite2D" parent="." groups=["player"]]

@@ -1,69 +1,29 @@
-[gd_scene load_steps=13 format=3 uid="uid://rpo2vf5887bu"]
+[gd_scene load_steps=8 format=3 uid="uid://rpo2vf5887bu"]
 
 [ext_resource type="Script" path="res://Scripts/jumper.gd" id="1_j1he5"]
-[ext_resource type="Texture2D" uid="uid://ctufwle6m808u" path="res://Sprites/frog-jump-anim.png" id="2_wceon"]
+[ext_resource type="Texture2D" uid="uid://cq63i8c054hqw" path="res://icon.svg" id="2_3w6uu"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p34vx"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5efk7"]
-atlas = ExtResource("2_wceon")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8bjvs"]
-atlas = ExtResource("2_wceon")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pmnkq"]
-atlas = ExtResource("2_wceon")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wx7xg"]
-atlas = ExtResource("2_wceon")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_opk2h"]
-atlas = ExtResource("2_wceon")
-region = Rect2(48, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eoto7"]
-atlas = ExtResource("2_wceon")
-region = Rect2(64, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_nsqgu"]
+atlas = ExtResource("2_3w6uu")
+region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4y34t"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5efk7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8bjvs")
+"texture": SubResource("AtlasTexture_nsqgu")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pmnkq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wx7xg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_opk2h")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eoto7")
-}],
-"loop": true,
-"name": &"jump",
-"speed": 2.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gmeiv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lu4yl"]
-size = Vector2(20, 8)
+size = Vector2(22, 22)
 
 [node name="jumper" type="RigidBody2D"]
 collision_layer = 6
@@ -73,23 +33,19 @@ script = ExtResource("1_j1he5")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.624081, 0.659153)
 sprite_frames = SubResource("SpriteFrames_4y34t")
-animation = &"jump"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(0.790928, 0.728325)
 shape = SubResource("RectangleShape2D_gmeiv")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-scale = Vector2(0.8218, 0.750144)
 
 [node name="Area2D" type="Area2D" parent="."]
-scale = Vector2(0.872739, 0.798359)
 collision_layer = 4
-collision_mask = 4
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_lu4yl")
 
 [node name="Timer" type="Timer" parent="."]

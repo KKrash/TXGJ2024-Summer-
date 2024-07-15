@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://c5ecnpotkluin"]
+[gd_scene load_steps=16 format=3 uid="uid://c5ecnpotkluin"]
 
 [ext_resource type="PackedScene" uid="uid://djikr5p2elxey" path="res://Assets/Misc/prefabs/bullet.tscn" id="1_p03fv"]
+[ext_resource type="Script" path="res://Scripts/MainGame.gd" id="1_qhnk4"]
 [ext_resource type="PackedScene" uid="uid://dar5eln4q8jv6" path="res://Assets/Misc/prefabs/groundpiece.tscn" id="2_kwv2c"]
 [ext_resource type="Script" path="res://Scripts/groundspawner.gd" id="3_kcyo5"]
 [ext_resource type="PackedScene" uid="uid://b3g6ak0kevywe" path="res://Assets/Misc/prefabs/enemydirector.tscn" id="4_ygwi4"]
@@ -8,11 +9,17 @@
 [ext_resource type="PackedScene" uid="uid://bngy5crnj0bf8" path="res://Assets/Players/GuyandShip.tscn" id="6_5cogc"]
 [ext_resource type="PackedScene" uid="uid://c1qi1j60cdayk" path="res://Assets/Misc/prefabs/background.tscn" id="7_vrtky"]
 [ext_resource type="PackedScene" uid="uid://duk6jcs557t7g" path="res://Assets/Misc/prefabs/resource_director.tscn" id="8_0k203"]
+[ext_resource type="PackedScene" uid="uid://ckvucpcf30sqh" path="res://Assets/Misc/prefabs/audio_stream_player_2d.tscn" id="9_i1jmj"]
+[ext_resource type="PackedScene" uid="uid://bm8jwmfl4jdok" path="res://Assets/Misc/prefabs/fuel_decrease.tscn" id="10_evwwn"]
+[ext_resource type="PackedScene" uid="uid://wubrjgaymgqj" path="res://Assets/Misc/prefabs/resource_timer.tscn" id="11_xkpcr"]
+[ext_resource type="PackedScene" uid="uid://d3safy1k724cv" path="res://Assets/Misc/prefabs/score_timer.tscn" id="12_8e36a"]
+[ext_resource type="PackedScene" uid="uid://fsrytil8532d" path="res://Assets/Misc/prefabs/hud.tscn" id="13_bg60k"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dw4vj"]
 distance = -384.0
 
 [node name="EnemyTestScene" type="Node2D"]
+script = ExtResource("1_qhnk4")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(421, 291)
@@ -145,3 +152,18 @@ position = Vector2(41, 356)
 [node name="ParallaxBackground" parent="." instance=ExtResource("7_vrtky")]
 
 [node name="resourceDirector" parent="." instance=ExtResource("8_0k203")]
+
+[node name="AudioStreamPlayer2D" parent="." instance=ExtResource("9_i1jmj")]
+position = Vector2(-17, 8)
+
+[node name="Fuel Decrease" parent="." instance=ExtResource("10_evwwn")]
+
+[node name="ResourceTimer" parent="." instance=ExtResource("11_xkpcr")]
+
+[node name="ScoreTimer" parent="." instance=ExtResource("12_8e36a")]
+
+[node name="HUD" parent="." instance=ExtResource("13_bg60k")]
+
+[connection signal="timeout" from="Fuel Decrease" to="." method="_on_fuel_decrease_timeout"]
+[connection signal="timeout" from="ResourceTimer" to="." method="_on_resource_timer_timeout"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]

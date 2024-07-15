@@ -46,3 +46,7 @@ func _on_fuel_decrease_timeout():
 func decrementBar():
 	var anotherSize = Vector2(32*GlobalVars.lives, 32)
 	$"HUD/sprite for heart".set_size(anotherSize)
+
+
+func _on_resource_timer_timeout():
+	pass # Replace with function body.

@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://fsrytil8532d"]
+
+[ext_resource type="Script" path="res://Scripts/HUD.gd" id="1_ao0x1"]
+[ext_resource type="Texture2D" uid="uid://camtkqjdxgn7l" path="res://Sprites/heart-ui.png" id="2_1vlw4"]
+[ext_resource type="Texture2D" uid="uid://d1q4l8w5kafln" path="res://Sprites/fuel bar.png" id="3_g7o53"]
+[ext_resource type="Texture2D" uid="uid://njgtpnneyi8p" path="res://Sprites/fuel-bar-ui.png" id="4_vko03"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_ao0x1")
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 874.0
+offset_top = 2.0
+offset_right = 960.0
+offset_bottom = 39.0
+text = "0000000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LivesLabel" type="Label" parent="."]
+visible = false
+offset_left = 31.0
+offset_top = 3.0
+offset_right = 95.0
+offset_bottom = 26.0
+text = "9999999"
+
+[node name="sprite for heart" type="TextureRect" parent="."]
+offset_top = 62.0
+offset_right = 32.0
+offset_bottom = 94.0
+scale = Vector2(3.8, 3.39)
+texture = ExtResource("2_1vlw4")
+stretch_mode = 1
+
+[node name="FuelBar" type="TextureRect" parent="."]
+offset_left = 11.0
+offset_top = 41.0
+offset_right = 31.0
+offset_bottom = 46.0
+scale = Vector2(18, 3.704)
+texture = ExtResource("3_g7o53")
+stretch_mode = 1
+
+[node name="FuelBarLabel" type="TextureRect" parent="."]
+offset_left = 6.0
+offset_top = 3.0
+offset_right = 383.0
+offset_bottom = 66.0
+texture = ExtResource("4_vko03")
+metadata/_edit_lock_ = true
