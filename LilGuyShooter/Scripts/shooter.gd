@@ -22,6 +22,7 @@ func _on_Area2D_body_exited(body: Node) -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$AnimatedSprite2D.play("default")
 	jumpTimer.timeout.connect(_jump)
 	jumpTimer.wait_time = 2.5
 	shootTimer.timeout.connect(_shoot)
@@ -44,11 +45,16 @@ func _jump():
 	var direction = rng.randi_range(1, 3)
 	#if on_ground>0:
 	if direction>1:
+		$AnimatedSprite2D.flip_h = false
+		$AnimatedSprite2D.play("jump")
 		apply_central_impulse(Vector2(-150, -150))
 		#print("left gaming")
 	else:
+		$AnimatedSprite2D.flip_h = true
+		$AnimatedSprite2D.play("jump")
 		apply_central_impulse(Vector2(150, -150))
 		#print("right gaming")
+	$AnimatedSprite2D.play("default")
 	var waitTime = rng.randf_range(3, 6)
 	jumpTimer.wait_time =waitTime
 	jumpTimer.start()
@@ -58,6 +64,7 @@ func _shoot():
 	shootTimer.stop()
 	
 	if bullet != null:
+		$AnimatedSprite2D.play("jump")
 		var bulletInstance: RigidBody2D = bullet.instantiate()
 		if bulletInstance != null:
 			# Add the projectile to the scene
@@ -69,6 +76,7 @@ func _shoot():
 			bulletInstance.linear_velocity = initialVelocity
 	
 	#add_child(load("res://Assets/Misc/prefabs/bullet.tscn").instance())
+	$AnimatedSprite2D.play("default")
 	var waitTime = rng.randf_range(3, 6)
 	shootTimer.wait_time =waitTime
 	shootTimer.start()

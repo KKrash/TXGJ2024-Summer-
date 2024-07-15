@@ -18,6 +18,7 @@ var on_ground = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$AnimatedSprite2D.play("default")
 	my_timer.timeout.connect(_on_timer_timeout)
 	my_timer.wait_time = 2.5
 	my_timer.start()
@@ -29,6 +30,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
 	pass
 		
 		
@@ -38,11 +40,16 @@ func _jump(rng):
 	var direction = rng.randi_range(1, 3)
 	#if on_ground>0:
 	if direction>1:
+		$AnimatedSprite2D.flip_h= false
+		$AnimatedSprite2D.play("jump")
 		apply_central_impulse(Vector2(-300, -300))
 		#print("left gaming")
 	else:
+		$AnimatedSprite2D.flip_h= true
+		$AnimatedSprite2D.play("jump")
 		apply_central_impulse(Vector2(300, -300))
 		#print("right gaming")
+	$AnimatedSprite2D.play("default")
 
 func _on_timer_timeout():
 	#print("Timer has timed out!")
