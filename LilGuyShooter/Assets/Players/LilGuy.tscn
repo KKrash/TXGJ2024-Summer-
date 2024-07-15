@@ -71,24 +71,29 @@ height = 20.2648
 radius = 4.99175
 height = 24.0
 
+<<<<<<< Updated upstream
 [node name="SpaceMan" type="CharacterBody2D"]
+=======
+[node name="SpaceMan" type="CharacterBody2D" groups=["player"]]
+collision_mask = 65
+>>>>>>> Stashed changes
 script = ExtResource("1_ycywk")
 
-[node name="AnimatedSpaceMan" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSpaceMan" type="AnimatedSprite2D" parent="." groups=["player"]]
 sprite_frames = SubResource("SpriteFrames_sqeol")
 animation = &"jump"
 
-[node name="SpaceManCollision" type="CollisionShape2D" parent="."]
+[node name="SpaceManCollision" type="CollisionShape2D" parent="." groups=["player"]]
 position = Vector2(2.98023e-08, 5)
 rotation = 0.0577171
 scale = Vector2(1.7782, 1.14847)
 shape = SubResource("CapsuleShape2D_hgobx")
 
-[node name="Area2D" type="Area2D" parent="." groups=["Player"]]
+[node name="Area2D" type="Area2D" parent="." groups=["Player", "player"]]
 scale = Vector2(1.36275, 1)
 collision_layer = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["player"]]
 position = Vector2(0, 5)
 rotation = 0.057441
 shape = SubResource("CapsuleShape2D_0n54a")
