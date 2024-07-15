@@ -1,16 +1,19 @@
 [gd_scene load_steps=7 format=3 uid="uid://djikr5p2elxey"]
 
 [ext_resource type="Script" path="res://Scripts/bulletScript.gd" id="1_2ct5s"]
-[ext_resource type="Texture2D" uid="uid://cblkkg8qkhajm" path="res://Assets/Misc/120px-Grenade_proj_red.png" id="1_ieftc"]
-[ext_resource type="Script" path="res://Scripts/bulletcollision.gd" id="3_xmr3d"]
+[ext_resource type="Texture2D" uid="uid://s46se67nbmbu" path="res://Sprites/bird-shot.png" id="2_nccsv"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cetkm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mq6fm"]
+atlas = ExtResource("2_nccsv")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jndva"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_ieftc")
+"texture": SubResource("AtlasTexture_mq6fm")
 }],
 "loop": true,
 "name": &"default",
@@ -20,23 +23,18 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_jilg5"]
 
 [node name="bullet" type="RigidBody2D"]
-collision_layer = 14
-collision_mask = 14
+collision_layer = 6
+collision_mask = 5
 physics_material_override = SubResource("PhysicsMaterial_cetkm")
 script = ExtResource("1_2ct5s")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 2.38419e-07)
-scale = Vector2(0.145833, 0.141509)
 sprite_frames = SubResource("SpriteFrames_jndva")
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 8
-collision_mask = 13
-script = ExtResource("3_xmr3d")
+scale = Vector2(0.88761, 0.798743)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_jilg5")
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

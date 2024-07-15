@@ -8,7 +8,11 @@ func _ready():
 	#connect("body_entered", self.get_node("Area2D"), "_on_Area_body_entered")
 	apply_central_impulse(Vector2(-300, -300))
 	#connect("body_entered",callable)
-
+func _process(delta):
+	if linear_velocity.y > 0:
+		sprite.flip_v = true
+	else:
+		sprite.flip_v = false
 #func _on_body_entered (body):
 	#print("BULLETHIT")
 	#if body.has_method("hit"):
