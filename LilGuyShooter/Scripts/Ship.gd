@@ -75,5 +75,5 @@ func shoot2():
 
 					
 func _damageFuel():
-	GlobalVars.fuelPercentage-=10
+	GlobalVars.fuelPercentage-=2
 	#print("ASTEROID HIT SHIP "+str(GlobalVars.fuelPercentage))

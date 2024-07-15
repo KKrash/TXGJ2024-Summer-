@@ -1,9 +1,10 @@
 extends Sprite2D
 
 func _on_area_2d_body_entered(_body):
-	hide()
-	#GlobalVars.currentFuel = min(20, GlobalVars.currentFuel+1)
-	GlobalVars.score += 50
-
-func _on_visibility_changed():
-	queue_free()
+	if _body.is_in_group("player"):
+		print("collected crystal2")
+		hide()
+			#GlobalVars.currentFuel = min(20, GlobalVars.currentFuel+1)
+		GlobalVars.score += 50
+		print(str(GlobalVars.score))
+		queue_free()

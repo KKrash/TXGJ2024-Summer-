@@ -1,5 +1,5 @@
 extends Node
-var score
+var score=0
 var max_lives = 3
 var lives = max_lives
 #var fuelPercentage = 100
