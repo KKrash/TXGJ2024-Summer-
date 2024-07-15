@@ -13,6 +13,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	translate(Vector2(-.415, 0))
+	if self.global_position.x <-100:
+		queue_free()
 
 
 func _physics_process(delta):

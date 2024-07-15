@@ -34,6 +34,15 @@ offset_bottom = 478.0
 texture = ExtResource("3_ngjjm")
 metadata/_edit_lock_ = true
 
+[node name="crystal1Resource" parent="." instance=ExtResource("9_saarq")]
+position = Vector2(0, -38)
+
+[node name="crystal2Resource" parent="." instance=ExtResource("10_frwhy")]
+position = Vector2(47, 74)
+
+[node name="jerryCanResource" parent="." instance=ExtResource("2_wnfwx")]
+position = Vector2(143, 236)
+
 [node name="Lil Man" type="CharacterBody2D" parent="."]
 script = ExtResource("4_orumn")
 
@@ -103,16 +112,7 @@ metadata/_edit_lock_ = true
 
 [node name="ResourceTimer" type="Timer" parent="."]
 
-[node name="jerryCanResource" parent="." instance=ExtResource("2_wnfwx")]
-position = Vector2(23, 261)
-
 [node name="Fuel Decrease" type="Timer" parent="."]
-
-[node name="crystal1Resource" parent="." instance=ExtResource("9_saarq")]
-position = Vector2(186, -13)
-
-[node name="crystal2Resource" parent="." instance=ExtResource("10_frwhy")]
-position = Vector2(100, 86)
 
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
 [connection signal="timeout" from="ResourceTimer" to="." method="_on_resource_timer_timeout"]
